@@ -3,16 +3,17 @@
   <head>
     <meta charset="utf-8">
     <title>Detail menu</title>
+    <link rel="stylesheet" href="../css/style.css">
   </head>
   <body>
     <header>
       <h1>Virtual roundabout</h1>
       <nav>
         <ul>
-          <li></li>
-          <li>addDirection</li>
-          <li>Shopping cart</li>
-          <li>sign out</li>
+          <li> </li>
+          <li> <a href="#">addDirection</a> </li>
+          <li> <a href="#">Shopping cart</a> </li>
+          <li> <a href="#">sign out</a> </li>
         </ul>
       </nav>
     </header>

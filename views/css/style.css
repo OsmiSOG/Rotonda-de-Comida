@@ -1,0 +1,24 @@
+body {
+  text-align: center;
+}
+
+header {
+
+}
+
+nav {
+
+}
+
+.form {
+  display: inline-block;
+  text-align: left;
+}
+
+.input-form{
+  margin: 1em;
+}
+
+.select-form{
+
+}

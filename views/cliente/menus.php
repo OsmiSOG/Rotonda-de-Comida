@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>List of menus</title>
+    <link rel="stylesheet" href="../css/style.css">
   </head>
   <body>
     <header>
@@ -10,9 +11,9 @@
       <nav>
         <ul>
           <li></li>
-          <li>addDirection</li>
-          <li>Shopping cart</li>
-          <li>sign out</li>
+          <li> <a href="#">ddDirection</a></li>
+          <li> <a href="#">Shopping cart</a></li>
+          <li> <a href="#">sign out</a></li>
         </ul>
       </nav>
     </header>

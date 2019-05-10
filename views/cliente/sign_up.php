@@ -3,40 +3,46 @@
   <head>
     <meta charset="utf-8">
     <title>Sign up User</title>
+    <link rel="stylesheet" href="../css/style.css">
   </head>
   <body>
+    <header>
+      <nav>
+        <a href="sign_in.php">sign in</a>
+      </nav>
+    </header>
     <h1>Sign up</h1>
-    <form class="" action="#" method="post">
-      <div class="">
+    <form class="form" action="#" method="post">
+      <div class="input-form">
         <label for="">nombre</label>
         <input type="text" name="name" value="" placeholder="Tu nombre">
       </div>
-      <div class="">
+      <div class="input-form">
         <label for="">cedula</label>
         <input type="number" name="identification" value="" placeholder="Numero de identificación">
       </div>
-      <div class="">
+      <div class="input-form">
         <label for="">fecha de nacimiento</label>
         <input type="date" name="birthdate" value="">
       </div>
-      <div class="">
+      <div class="input-form">
         <label for="">correo</label>
         <input type="email" name="email" value="" placeholder="example@dominio">
       </div>
-      <div class="">
+      <div class="input-form">
         <label for="">direccion</label>
-        <div class="">
+        <div class="input-form">
           <label for="">pais</label>
-          <select class="" name="country">
+          <select class="select-form" name="country">
           </select>
           <label for="">ciudad</label>
-          <select class="" name="city">
+          <select class="select-form" name="city">
           </select>
           <label for="">direccion</label>
           <input type="text" name="" value="">
         </div>
       </div>
-      <div class="">
+      <div class="input-form">
         <label for="">password</label>
         <input type="password" name="" value="" placeholder="password">
       </div>
