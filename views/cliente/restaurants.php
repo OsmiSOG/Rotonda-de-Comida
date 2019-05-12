@@ -18,7 +18,7 @@
     </header>
     <div class="content-body">
       <div class="title-body">
-        <h2>Restaurants in your area</h2>
+        <h2 class="nuevo">Restaurants in your area</h2>
       </div>
       <div class="">
 

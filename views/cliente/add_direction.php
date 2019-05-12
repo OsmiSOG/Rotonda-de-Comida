@@ -28,7 +28,7 @@
         </select>
         <label for="">direction</label>
         <input type="text" name="" value="">
-        <button type="submit" name="button">add</button>
+        <button class="botones" type="submit" name="button">agregar</button>
       </form>
 
     </div>

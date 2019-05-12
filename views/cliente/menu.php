@@ -19,7 +19,7 @@
     </header>
     <div class="">
       <div class="">
-        <h2>Detail of the menu</h2>
+        <h2 class="titulo-h1">Detail of the menu</h2>
       </div>
       <div class="">
 

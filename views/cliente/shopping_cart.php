@@ -18,7 +18,7 @@
     </header>
     <div class="content-app">
       <div class="title">
-        <h1>Shopping cart</h1>
+        <h1 class="titulo-h1" >Shopping cart</h1>
       </div>
       <div class="menus">
         <!--Divs de menus agregados-->
@@ -26,7 +26,7 @@
 
       <div class="">
         <form class="form" action="index.html" method="post">
-          <div class="">
+          <div class="input-form">
             <label for="">Total</label>
             <input type="number" name="" value="0.0">
           </div>
@@ -35,11 +35,11 @@
             Credit card:<input type="radio" name="credit" value="credit card">
             Money cash: <input type="radio" name="cash" value="money cash">
           </div>
-          <div class="">
+          <div class="input-form">
             <label for="">direction</label>
             <input type="text" name="" value="">
           </div>
-          <button type="submit" name="button">Pedir !!</button>
+          <button class="botones" type="submit" name="button">Pedir !!</button>
         </form>
 
       </div>

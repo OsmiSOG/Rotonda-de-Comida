@@ -14,18 +14,18 @@
         </ul>
       </nav>
     </header>
-    <h1>sign in</h1>
+    <h1 class="titulo-h1">sign in</h1>
     <form class="form" action="#" method="post">
       <div class="input-form">
         <label for="">cellphone</label>
-        <input type="text" name="cellphone" value="">
+        <input type="text" name=" cellphone  " value="">
       </div>
       <div class="input-form">
         <label for="">password</label>
-        <input type="text" name="password" value="">
+        <input type="text" name="password  " value="">
       </div>
       <div class="input-form">
-        <button type="button" name="button">sign in</button>
+        <button class="botones" type="button" name="button  ">sign in</button>
       </div>
     </form>
   </body>

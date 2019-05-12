@@ -50,7 +50,7 @@
         <input type="password" name="" value="" placeholder="password">
       </div>
       <div class="input-form">
-      <button type="button" name="button">Registrar </button>
+      <button class="botones" type="button" name="button">Registrar </button>
       </div>
     </form>
   </body>
