@@ -7,11 +7,14 @@
   </head>
   <body>
     <header>
+      <h1 id="title-header">Roundabout restaurant</h1>
       <nav>
-        <a href="sign_up.php">sign up</a>
+        <ul>
+          <li><a href="sign_up.php">sign up</a></li>
+        </ul>
       </nav>
     </header>
-    <h1>sign_in</h1>
+    <h1>sign in</h1>
     <form class="form" action="#" method="post">
       <div class="input-form">
         <label for="">cellphone</label>

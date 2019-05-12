@@ -1,13 +1,69 @@
+
+@import url('https://fonts.googleapis.com/css?family=Carter+One');
+@import url('https://fonts.googleapis.com/css?family=Catamaran|Francois+One|Hind+Siliguri|Luckiest+Guy|Notable|Titan+One');
+
 body {
   text-align: center;
+  font-family: Montserrat,'Helvetica Neue',Arial,Helvetica,sans-serif;
+  color: grey;
+  margin: 0;
+  padding: 0;
+  line-height: 1.5em;
+}
+header {
+  background: #ef3040;
+  color: grey;
+  height: 80px;
+  align-self: center;
+  
 }
 
-header {
-
+#title-header{
+ color: white;
+ float: left;
+ padding: 15px 0 0 20px;
+ font-family: 'Luckiest Guy', cursive;
+ font-family: 'Titan One', cursive;
+ font-family: 'Notable', sans-serif;
+ font-family: 'Francois One', sans-serif;
+ font-family: 'Hind Siliguri', sans-serif;
+ font-family: 'Catamaran', sans-serif;
+ text-align-last: center;
+font-weight: bold;
 }
 
 nav {
+float: right;
+}
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  padding-right: 20px;
 
+}
+nav ul li{
+  display: inline-block;
+  line-height: 80px;
+}
+
+nav ul li a{
+  display:block;
+  padding: 0 10px;
+  text-decoration: none;
+
+}
+
+nav ul li a:hover{
+  background: #967878;
+}
+
+.title-body{
+  font-size: 2.3em;
+ line-height: 1.3em;
+ margin: 15px 0;
+ text-align: center;
+ font-weight: 300;
 }
 
 .form {
@@ -17,8 +73,40 @@ nav {
 
 .input-form{
   margin: 1em;
+  font-family: Montserrat,'Helvetica Neue',Arial,Helvetica,sans-serif;
 }
-
+.input-form input{
+  border-radius: 8px;
+}
+#title-body{
+  font-family: 'Carter One', cursive;
+  font-size: 3em;
+color: rgb(63, 40, 9);
+text-shadow: 3px 3px 3px rgb(124, 124, 61);
+}
 .select-form{
 
+}
+
+#boton{
+  border: none;
+  font-size: 2em;
+  color: rgb(205, 230, 230);
+  background: -webkit-linear-gradient(top, #070d0e, #aa09b8);
+  background: -moz-linear-gradient(top, #070d0e,#aa09b8 );
+  background: linear-gradient(top,#070d0e,#aa09b8 );
+  padding: 9px;
+  cursor: pointer;
+  text-shadow: 3px 3px 3px #4864e0;
+  box-shadow: 3px 5px 7px #000000;
+  border-radius: 5px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: start;
+  
+}
+
+#boton:active{
+  background: -webkit-linear-gradient(top, #167d8f, #b549be);
+  background: -moz-linear-gradient(top, #287581,#d258dd );
+  background: linear-gradient(top,#070d0e,#aa09b8 );
 }

@@ -7,8 +7,8 @@
   </head>
   <body>
     <header>
+      <h1 id="title-header">Roundabout restaurant</h1>
       <nav>
-        <h1>Roundabout restaurant</h1>
         <ul>
           <li></li>
           <li> <a href="#">add direction</a> </li>

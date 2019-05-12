@@ -7,7 +7,7 @@
   </head>
   <body>
     <header>
-      <h1>Virtual roundabout</h1>
+      <h1 id="title-header">Virtual roundabout</h1>
       <nav>
         <ul>
           <li> <a href="#">add direction</a> </li>
@@ -16,8 +16,8 @@
         </ul>
       </nav>
     </header>
-    <div class="">
-      <div class="">
+    <div class="content-body">
+      <div class="title-body">
         <h2>Restaurants in your area</h2>
       </div>
       <div class="">

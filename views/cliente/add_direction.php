@@ -7,7 +7,7 @@
   </head>
   <body>
     <header>
-      <h1>Virtual roundabout</h1>
+      <h1 id="title-header">Virtual roundabout</h1>
       <nav>
         <ul>
           <li></li>
@@ -16,7 +16,7 @@
         </ul>
       </nav>
     </header>
-    <div class="">
+    <div class="input-form">
       <form class="form" action="index.html" method="post">
         <label for="">country</label>
         <select class="" name="">
