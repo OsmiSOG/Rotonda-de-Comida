@@ -3,19 +3,28 @@
   <head>
     <meta charset="utf-8">
     <title>Sign up</title>
+    <link rel="stylesheet" href="../css/style.css">
   </head>
   <body>
-    <h1>Sign up</h1>
-    <form class="" action="index.html" method="post">
-      <div class="">
+    <header>
+      <h1 id="title-header">Roundabout restaurant</h1>
+      <nav>
+        <ul>
+          <li><a href="sign_in.php">sign in</a></li>
+        </ul>
+      </nav>
+    </header>
+    <h1 id="title-body">Sign up</h1>
+    <form class="form" action="#" method="post">
+      <div class="input-form">
         <label for="">name restaurant</label>
-        <input type="text" name="" value="">
+        <input type="text" name="name" value="">
       </div>
-      <div class="">
+      <div class="input-form">
         <label for="">NIT</label>
-        <input type="number" name="" value="">
+        <input type="number" name="NIT" value="">
       </div>
-      <div class="">
+      <div class="input-form">
         <p>Location</p>
         <label for="">Country</label>
         <select class="" name="">
@@ -28,15 +37,18 @@
         <label for="">Direction</label>
         <input type="text" name="" value="">
       </div>
-      <div class="">
+      <div class="input-form">
         <label for="">specialty</label>
         <select class="" name="">
 
         </select>
       </div>
-      <div class="">
+      <div class="input-form">
         <label for="">password</label>
         <input type="password" name="" value="">
+      </div>
+      <div class="input-form">
+        <button class="botones" type="submit" name="button">Sign up</button>
       </div>
     </form>
   </body>

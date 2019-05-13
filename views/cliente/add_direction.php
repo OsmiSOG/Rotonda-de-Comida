@@ -7,7 +7,7 @@
   </head>
   <body>
     <header>
-      <h1>Virtual roundabout</h1>
+      <h1 id="title-header">Virtual roundabout</h1>
       <nav>
         <ul>
           <li></li>
@@ -16,7 +16,7 @@
         </ul>
       </nav>
     </header>
-    <div class="">
+    <div class="input-form">
       <form class="form" action="index.html" method="post">
         <label for="">country</label>
         <select class="" name="">
@@ -28,7 +28,7 @@
         </select>
         <label for="">direction</label>
         <input type="text" name="" value="">
-        <button type="submit" name="button">add</button>
+        <button class="botones" type="submit" name="button">agregar</button>
       </form>
 
     </div>

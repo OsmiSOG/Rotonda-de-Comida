@@ -3,21 +3,24 @@
   <head>
     <meta charset="utf-8">
     <title>Home restaurant</title>
+    <link rel="stylesheet" href="../css/style.css">
   </head>
   <body>
     <header>
-      <h1>virtual roundabout</h1>
-      <ul>
-        <li>Add menu</li>
-        <li>sign out</li>
-      </ul>
+      <h1 id="title-header">Virtual roundabout</h1>
+      <nav>
+        <ul>
+          <li> <a href="#">Add menu</a> </li>
+          <li> <a href="#">sign out</a> </li>
+        </ul>
+      </nav>
     </header>
-    <div class="">
-      <div class="">
-        <h1>Your menus</h1>
+    <div class="content-body">
+      <div class="title-body">
+        <h1 class="nuevo">Your menus</h1>
       </div>
       <div class="">
-        
+
       </div>
     </div>
   </body>

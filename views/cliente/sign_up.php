@@ -7,11 +7,14 @@
   </head>
   <body>
     <header>
+      <h1 id="title-header">Roundabout restaurant</h1>
       <nav>
-        <a href="sign_in.php">sign in</a>
+        <ul>
+          <li><a href="sign_in.php">sign in</a></li>
+        </ul>
       </nav>
     </header>
-    <h1>Sign up</h1>
+    <h1 id="title-body">Sign up</h1>
     <form class="form" action="#" method="post">
       <div class="input-form">
         <label for="">nombre</label>
@@ -45,6 +48,9 @@
       <div class="input-form">
         <label for="">password</label>
         <input type="password" name="" value="" placeholder="password">
+      </div>
+      <div class="input-form">
+      <button class="botones" type="button" name="button">Registrar </button>
       </div>
     </form>
   </body>
