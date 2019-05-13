@@ -18,11 +18,11 @@
     <form class="form" action="#" method="post">
       <div class="input-form">
         <label for="">cellphone</label>
-        <input type="text" name=" cellphone  " value="">
+        <input type="text" name=" cellphone" value="">
       </div>
       <div class="input-form">
         <label for="">password</label>
-        <input type="text" name="password  " value="">
+        <input type="text" name="password" value="">
       </div>
       <div class="input-form">
         <button class="botones" type="button" name="button  ">sign in</button>

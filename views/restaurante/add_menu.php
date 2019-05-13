@@ -3,17 +3,31 @@
   <head>
     <meta charset="utf-8">
     <title>add new menu</title>
+    <link rel="stylesheet" href="../css/style.css">
   </head>
   <body>
     <header>
-
+      <nav>
+        <ul>
+          <li> <a href="#">Home</a> </li>
+          <li> <a href="#">sign out</a> </li>
+        </ul>
+      </nav>
     </header>
-    <div class="">
-        <label for="">Nombre</label>
-        <input type="text" name="" value="">
-        <label for="">Precio</label>
-        <input type="number" name="" value="">
-        <div class="">
+    <div class="content-body">
+      <div class="title-body">
+        <h1 class="nuevo">Add new menu</h1>
+      </div>
+      <form class="form" action="index.html" method="post">
+        <div class="input-form">
+          <label for="">Nombre</label>
+          <input type="text" name="" value="">
+        </div>
+        <div class="input-form">
+          <label for="">Precio</label>
+          <input type="number" name="" value="">
+        </div>
+        <div class="input-form">
           productos
           <select class="" name="">
 
@@ -23,7 +37,10 @@
           </select>
           <button type="button" name="button">+</button>
         </div>
-        <button type="button" name="button">Agregar menu</button>
+        <div class="input-form">
+          <button type="button" name="button">Agregar menu</button>
+        </div>
+      </form>
     </div>
   </body>
 </html>
