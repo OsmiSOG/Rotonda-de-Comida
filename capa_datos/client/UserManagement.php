@@ -64,10 +64,10 @@
           $restaurant -> setName($row[1]);
           $restaurant -> setAddress();
           $restaurant -> calculateAvailability($row[2], $row[3]);
-          $restaurant -> specialty();
+          $restaurant -> specialty($this->getSpecialtyXRestaurant($row[5]));
           $restaurant -> setMenus();
           $restaurant -> setProdcuts();
-          array_push($this->restaurants, $restaurant);
+          array_push($restaurants, $restaurant);
         }
         $result = $statemet->fetch();
 
@@ -77,40 +77,89 @@
 
     }
 
-    public function getRestaurantMenus($value='')
+    public function getSpecialtyXIdRestaurant($idSpecialty)
     {
       try {
-        $sql = ;
+        $sql = 'SELECT nombre FROM Especialidades WHERE idEspecialidades = :idEspecialidad;'
+        $statemet = connect() -> prepare($sql);
+        $statemet -> execute(array('idEspecialidad' => $idSpecialty));
+        $result = $statemet -> fetch();
+        return $result['nombre'];
+      } catch (PDOException $e) {
+        $e->getMessage();
+      }
 
+    }
+    public function getRestaurantMenus($idRestaurant)
+    {
+      try {
+        $menus = array();
+        $sql = 'SELECT * FROM Menus
+                INNER JOIN RestaurantesPorMenus
+                ON idMenu = idMenu
+                WHERE NITRestaurate = :$idRestaurant';
+        $statemet = connect() -> prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_SCROLL));
+        $statemet -> execute(array(':$idRestaurant' => $idRestaurant));
+        while ($row = $statement->fetch(PDO::FETCH_NUM, PDO::FETCH_ORI_NEXT)) {
+          $menu = new Menu();
+          $menu -> setIdMenu($row[0]);
+          $menu -> setPrice($row[1]);
+          $menu -> setName($row[2]);
+          $menu -> setProdcuts($this->getProductosFromMenu($row[0]));
+          array_push($menus, $menu);
+        }
+        return $menus;
       } catch (PDOException $e) {
         $e->getMessage();
       }
 
     }
 
-    public function getProductosFromMenu($value='')
+    public function getProductosFromMenu($idMenu)
     {
       try {
-
-      } catch (\Exception $e) {
+        $products=array()
+        $sql = 'SELECT * FROM Productos
+        INNER JOIN MenusPorProductos
+        ON idProducto = idProducto
+        WHERE idMenu = :idMenu';
+        $statemet = connect() -> prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_SCROLL));
+        $statemet -> execute(array(':idMenu'=>$idMenu));
+        while ($row = $statement->fetch(PDO::FETCH_NUM, PDO::FETCH_ORI_NEXT)){
+          $product = new Product();
+          $product -> setIdProduct($row[0]);
+          $product -> setName($row[1]);
+          $product -> setPrice($row[2]);
+          $product -> setCategory($this->getProductCategory());
+          $product -> setIngredients($this->getIngredientsFromProduct());
+          array_push($products, $product);
+        }
+      } catch (PDOException $e) {
 
       }
 
-      $sql;
     }
-    public function getIngredientsFromMenu($value='')
+    public function getProductCategory($idCategory)
     {
       try {
-
-      } catch (\Exception $e) {
-
+        $sql = 'SELECT * FROM Categorias WHERE idCategoria = :idCategory';
+        $statemet = connect() -> prepare($sql);
+        $statemet -> execute(array(':idCategory' => $idCategory));
+      } catch (PDOException $e) {
+        $e -> getMessage();
       }
 
-      $sql;
     }
+
     public function getIngredientsFromProduct($value='')
     {
-      $sql;
+      try {
+
+      } catch (PDOException $e) {
+
+      }
+
+      $sql = '';
     }
     public function getModifiabelIngredients($value='')
     {
@@ -131,10 +180,6 @@
     public function getOrder($value='')
     {
       // code...
-    }
-    public function getSpecialtyXRestaurant($value='')
-    {
-
     }
   }
 
