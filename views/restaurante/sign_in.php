@@ -3,15 +3,30 @@
   <head>
     <meta charset="utf-8">
     <title>sign in</title>
+    <link rel="stylesheet" href="../css/style.css">
   </head>
   <body>
-    <h1>Sign in</h1>
-    <form class="" action="#" method="post">
-      <label for="">NIT</label>
-      <input type="number" name="" value="">
-      <label for="">password</label>
-      <input type="password" name="" value="">
-      <button type="submit" name="button"></button>
+    <header>
+      <h1 id="title-header">Roundabout restaurant</h1>
+      <nav>
+        <ul>
+          <li><a href="sign_up.php">sign up</a></li>
+        </ul>
+      </nav>
+    </header>
+    <h1 class="titulo-h1">Sign in</h1>
+    <form class="form" action="#" method="post">
+      <div class="input-form">
+        <label for="">NIT</label>
+        <input type="number" name="NIT" value="">
+      </div>
+      <div class="input-form">
+        <label for="">password</label>
+        <input type="password" name="password" value="">
+      </div>
+      <div class="input-form">
+        <button class="botones" type="submit" name="button">Sign in</button>
+      </div>
     </form>
   </body>
 </html>
