@@ -115,6 +115,11 @@ nav ul li a:hover{
    background: linear-gradient(top,#070d0e,#ef3040 );
    padding: 10px;
    cursor: pointer;
+<<<<<<< HEAD
+=======
+   text-shadow: 3px 3px 3px #4e1912;
+   box-shadow: 3px 5px 7px #000000;
+>>>>>>> develop
    border-radius: 8px;
    font-family: 'Luckiest Guy', cursive;
    font-family: 'Titan One', cursive;
@@ -152,7 +157,7 @@ nav ul li a:hover{
 
 .option-box a{
   display: block;
-  background-color: rgb(233, 50, 24);
+  background-color: #ef3040;
   border-radius: 10px;
   margin: 10px;
   text-decoration: none;
@@ -160,6 +165,15 @@ nav ul li a:hover{
 }
 
 .option-box a:hover{
-  background-color: red;
+  background-color: #ef3040;
 }
+<<<<<<< HEAD
 >>>>>>> 9b704bc2c4b6b11581be680ffcf5d99aaff032db
+=======
+.titulos-res{
+  font-family: 'Carter One', cursive;
+  font-size: 1em;
+  color: rgb(63, 40, 9);
+  text-shadow: 3px 3px 3px rgb(124, 124, 61);
+}
+>>>>>>> develop
