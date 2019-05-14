@@ -29,16 +29,16 @@
         </div>
         <div class="input-form">
           productos
-          <select class="" name="">
+          <select class="escoger" name="">
 
           </select>
-          <select class="" name="">
+          <select class="escoger" name="">
 
           </select>
-          <button type="button" name="button">+</button>
+          <button class="escoger" type="button" name="button">+</button>
         </div>
         <div class="input-form">
-          <button class="botones" type="button" name="button">Agregar menu</button>
+          <button class="botones" type="button" name="button">Agregar</button>
         </div>
       </form>
     </div>
