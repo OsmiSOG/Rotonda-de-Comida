@@ -13,9 +13,9 @@
     function __construct()
     {
       $this->host     = 'localhost';
-      $this->db       = 'rotondaComida';
+      $this->db       = 'virtual_roundabout';
       $this->user     = 'root';
-      $this->password = "rootpasswordgiven";
+      $this->password = "root";
       $this->charset  = 'utf8';
     }
 
