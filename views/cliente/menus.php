@@ -7,7 +7,7 @@
   </head>
   <body>
     <header>
-      <h1>Virtual roundabout</h1>
+      <h1 id ="title-header">Virtual roundabout</h1>
       <nav>
         <ul>
           <li></li>
@@ -19,7 +19,7 @@
     </header>
     <div class="">
       <div class="">
-        <h2>List of menus</h2>
+        <h2 class="titulo-h1">List of menus</h2>
       </div>
       <!--divs menus obtenidos de la base de datos -->
     </div>

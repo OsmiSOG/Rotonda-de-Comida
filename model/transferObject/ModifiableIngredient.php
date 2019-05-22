@@ -1,14 +1,33 @@
 <?php
+/**
+ * esta clase ya no esta en el diagrama (revisar)
+ */
+class ModifiableIngredient
+{
+  private $modification;
+  private $name;
 
-  /**
-   *
-   */
-  class ModifiableIngredient
+  function __construct($modification=null, $name=null)
   {
-
-    function __construct(argument)
-    {
-      // code...
-    }
+    $this->modification=$modification;
+    $this->name=$name;
   }
-?>
+  public function getModification()
+  {
+    return $this->modification;
+  }
+  public function setModification($modification)
+  {
+    $this->modification=$modification;
+  }
+  public function getName($name)
+  {
+    return $this->name;
+  }
+  public function setName($name)
+  {
+    $this->name=$name;
+  }
+}
+
+ ?>
