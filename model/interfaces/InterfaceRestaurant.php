@@ -4,7 +4,8 @@
    */
   interface InterfaceRestaurant
   {
-    // code...
+    public function insertRestaurant($restaurant);
+    public function deleteRestaurant($idRestaurant);
   }
 
 ?>

@@ -4,7 +4,9 @@
    */
   interface InterfaceMenu
   {
-    public function selectMenuById($id);
+    public function insertMenu($menu);
+    public function selectMenuByRestaurant($idRestaurant);
+    public function deleteMenu($idMenu);
   }
 
 ?>
