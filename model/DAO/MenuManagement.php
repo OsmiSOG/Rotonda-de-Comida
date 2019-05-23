@@ -1,7 +1,7 @@
 <?php
-require_once $_SERVER['Rotonda-de-comida/model/dataSourse/connection.php'];
-require_once $_SERVER['Rotonda-de-comida/model/interface/interfacesMenu.php'];
-require_once $_SERVER['Rotonda-de-comida/model/transferObject/menu.php'];
+require_once $_SERVER['DOCUMENT_ROOT'].'/Rotonda-de-Comida/model/dataSource/Connection.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/Rotonda-de-Comida/model/interface/interfacesMenu.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/Rotonda-de-Comida/model/transferObject/menu.php';
 
 /**
  *
