@@ -18,7 +18,7 @@
       <div class="title-body">
         <h1 class="titulos-res">Add new menu</h1>
       </div>
-      <form class="form" action="index.html" method="post">
+      <form class="form" action=<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?> method="post">
         <div class="input-form">
           <label for="">Nombre</label>
           <input type="text" name="" value="">

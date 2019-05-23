@@ -4,7 +4,7 @@
    */
   interface InterfaceMenu
   {
-    // code...
+    public function selectMenuById($id);
   }
 
 ?>
