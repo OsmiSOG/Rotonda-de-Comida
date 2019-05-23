@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\controller",
+    "\\controller\\client",
+    "\\model",
+    "\\model\\DAO",
+    "\\model\\transferObject",
+    "\\views\\client"
+  ],
+  "PreviewInSolutionExplorer": false
+}
