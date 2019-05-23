@@ -4,7 +4,7 @@
    */
   interface InterfaceShoppingCart
   {
-    // code...
+  //  chao papa
   }
 
 ?>
