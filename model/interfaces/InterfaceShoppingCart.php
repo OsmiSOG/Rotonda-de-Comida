@@ -1,0 +1,10 @@
+<?php
+  /**
+   *
+   */
+  interface InterfaceShoppingCart
+  {
+    // code...
+  }
+
+?>
