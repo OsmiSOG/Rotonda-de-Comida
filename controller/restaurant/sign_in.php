@@ -10,5 +10,5 @@ if (isset($_SESSION['restaurant'])) {
   }
 }
 
-require_once '../../views/restaurant/sign_up.php';
+require_once '../../views/restaurant/sign_in.php';
 ?>
