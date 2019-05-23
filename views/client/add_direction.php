@@ -18,11 +18,11 @@
     </header>
     <div class="input-form">
       <form class="form" action="index.html" method="post">
-        <label for="">country</label>
+        <label class="escoger "for="">country</label>
         <select class="" name="">
 
         </select>
-        <label for="">city</label>
+        <label class="escoger" for="">city</label>
         <select class="" name="">
 
         </select>
