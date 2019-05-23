@@ -1,12 +1,12 @@
-<?php  
+<?php
   session_start();
   include_once '';
 
   if (isset($_SESSION['client'])) {
     header('location: restaurants.php');
-  } else {    
+  } else {
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-      
+
     }
   }
 
