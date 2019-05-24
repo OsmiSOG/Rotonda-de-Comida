@@ -1,9 +1,11 @@
 <?php
-  require_once '../Connection.php';
+  require_once $_SERVER['DOCUMENT_ROOT'].'/Rotonda-de-Comida/model/interfaces/InterfaceClient.php';
+  require_once $_SERVER['DOCUMENT_ROOT'].'/Rotonda-de-Comida/model/dataSource/Connection.php';
+  require_once $_SERVER['DOCUMENT_ROOT'].'/Rotonda-de-Comida/model/transferObject/Client.php';
   /**
    *
    */
-  class UserManagement extends Connection
+  class ClientManagement implements InterfaceClient 
   {
     protected $clietLog;
 

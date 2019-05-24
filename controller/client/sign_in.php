@@ -10,5 +10,5 @@
     }
   }
 
-  require_once '../../views/client/sign_up.php';
+  require_once '../../views/client/sign_in.php';
 ?>

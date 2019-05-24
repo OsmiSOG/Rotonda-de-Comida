@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>sign in</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../../views/css/style.css">
   </head>
   <body>
     <header>
@@ -15,7 +15,7 @@
       </nav>
     </header>
     <h1 class="titulo-h1">Sign in</h1>
-    <form class="form" action="#" method="post">
+    <form class="form" action=<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?> method="post">
       <div class="input-form">
         <label for="">NIT</label>
         <input type="number" name="NIT" value="">

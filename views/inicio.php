@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Welcome to your routbound</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../views/css/style.css">
   </head>
   <body>
     <header>
@@ -14,13 +14,13 @@
       <div class="content-box">
         <div class="option-box">
           <h4 >Client</h4>
-          <a href="#">sign in</a>
-          <a href="#">sign up</a>
+          <a href="client/sign_in.php">sign in</a>
+          <a href="client/sign_up.php">sign up</a>
         </div>
         <div class="option-box">
           <h4>Restaurant</h4>
-          <a href="#">sign in</a>
-          <a href="#">sign up</a>
+          <a href="restaurant/sign_in.php">sign in</a>
+          <a href="restaurant/sign_up.php">sign up</a>
         </div>
       </div>
     </div>

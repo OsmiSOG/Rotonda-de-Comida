@@ -1,39 +1,12 @@
 <?php
+  require_once $_SERVER['DOCUMENT_ROOT'].'/Rotonda-de-Comida/model/interfaces/InterfaceRestaurant.php';
+  require_once $_SERVER['DOCUMENT_ROOT'].'/Rotonda-de-Comida/model/dataSource/Connection.php';
+  require_once $_SERVER['DOCUMENT_ROOT'].'/Rotonda-de-Comida/model/transferObject/Restaurant.php';
   /**
    *
    */
-  class ClassName extends DB
+  class RestaurantManagement implements InterfaceRestaurant
   {
-
-    function __construct()
-    {
-      parent::__construct();
-    }
-
-    public function insertRestaurant()
-    {
-      // code...
-    }
-    public function insertMenu($value='')
-    {
-      // code...
-    }
-    public function insertProduct($value='')
-    {
-      // code...
-    }
-    public function insertIgredient($value='')
-    {
-      // code...
-    }
-    public function insertModifiabel($value='')
-    {
-      // code...
-    }
-    public function getOrders($value='')
-    {
-      // code...
-    }
 
   }
 

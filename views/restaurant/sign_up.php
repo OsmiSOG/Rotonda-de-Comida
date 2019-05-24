@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Sign up</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../../views/css/style.css">
   </head>
   <body>
     <header>
@@ -15,7 +15,7 @@
       </nav>
     </header>
     <h1 id="title-body">Sign up</h1>
-    <form class="form" action="#" method="post">
+    <form class="form" action=<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?> method="post">
       <div class="input-form">
         <label for="">name restaurant</label>
         <input type="text" name="name" value="">
