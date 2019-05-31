@@ -8,6 +8,68 @@
   class RestaurantManagement implements InterfaceRestaurant
   {
 
+
+    public function getRestaurants()
+    {
+      try {
+        $restaurants = array();
+        $sql='SELECT * FROM Restaurantes';
+        $statemet = connect() -> prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_SCROLL));
+        $statemet->execute();
+        while ($row = $statement->fetch(PDO::FETCH_NUM, PDO::FETCH_ORI_NEXT)) {
+          $restaurant = new Restaurant();
+          $restaurant -> setNIT($row[0]);
+          $restaurant -> setName($row[1]);
+          $restaurant -> setAddress();
+          $restaurant -> calculateAvailability($row[2], $row[3]);
+          $restaurant -> specialty($this->getSpecialtyXRestaurant($row[5]));
+          $restaurant -> setMenus();
+          $restaurant -> setProdcuts();
+          array_push($restaurants, $restaurant);
+        }
+        $result = $statemet->fetch();
+
+      } catch (PDOException $e) {
+        $e->getMessage();
+      }
+
+    }
+
+    public function getSpecialtyXIdRestaurant($idSpecialty)
+    {
+      try {
+        $sql = 'SELECT nombre FROM Especialidades WHERE idEspecialidades = :idEspecialidad;'
+        $statemet = connect() -> prepare($sql);
+        $statemet -> execute(array('idEspecialidad' => $idSpecialty));
+        $result = $statemet -> fetch();
+        return $result['nombre'];
+      } catch (PDOException $e) {
+        $e->getMessage();
+      }
+
+    }
+
+    public getPasswordByIdentification($identification){
+      try {
+        $sql = 'SELECT password FROM Restaurant WHERE NIT = :NIT';
+        $statemet = connect() -> prepare($sql);
+        $statemet->execute(array(':NIT'=>$identification));
+        $result = $statemet->fetch();
+        $password = null;
+        if(!$result){
+            $password = $result['password'];
+        }
+        $statement = null;
+        return $password;
+      } catch (PDOException $e) {
+        echo $e->getMessage;
+      }
+    }
+
+    public function insertRestaurant($restaurant)
+    {
+      // code...
+    }
   }
 
 ?>

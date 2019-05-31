@@ -7,8 +7,9 @@ require_once $_SERVER['DOCUMENT_ROOT'].'rotonda-de-comida/model/transferObject/M
 
 class ModifiableIngredient implements InterfaceModifiableIngredient
 {
-	function _construct(){
-
+	public function getModifiabelIngredients($value='')
+	{
+		$sql;
 	}
 
 

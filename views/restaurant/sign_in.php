@@ -15,6 +15,9 @@
       </nav>
     </header>
     <h1 class="titulo-h1">Sign in</h1>
+    <?php if ($runState != '') :?>
+      <p><?php echo $runState; ?></p>
+    <?php endif; ?>
     <form class="form" action=<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?> method="post">
       <div class="input-form">
         <label for="">NIT</label>
