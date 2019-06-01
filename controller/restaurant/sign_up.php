@@ -1,4 +1,7 @@
 <?php
+ini_set('display_errors', 1);
+error_reporting(-1);
+
 session_start();
 include_once '../../model/DAO/RestaurantManagement.php';
 include_once '../../model/transferObject/Restaurant.php';

@@ -5,11 +5,11 @@
   interface InterfaceOrder
   {
     public function InsertOrder($order);
-    public function selectOrdersByClient($idClient);
-    public function selectLastOrderByRestaurant($idRestaurant);
+    public function getOrdersByClient($idClient);
+    public function getLastOrderByRestaurant($idRestaurant);
     public function updateOrderActive($idClient);
     public function selectOrdersByRestaurant($idRestaurant);
-    public function selectOrdersActive($idRestaurant);
+    public function selectOrdersActiveByRestaurant($idRestaurant);
 
   }
 
