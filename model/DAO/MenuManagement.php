@@ -11,42 +11,52 @@ class MenuManagement implements interfacesMenu
 
   public function getRestaurantMenus($idRestaurant)
   {
-    try {
-      $menus = array();
-      $sql = 'SELECT * FROM Menus
-              INNER JOIN RestaurantesPorMenus
-              ON idMenu = idMenu
-              WHERE NITRestaurate = :$idRestaurant';
-      $statemet = connect() -> prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_SCROLL));
-      $statemet -> execute(array(':$idRestaurant' => $idRestaurant));
-      while ($row = $statement->fetch(PDO::FETCH_NUM, PDO::FETCH_ORI_NEXT)) {
-        $menu = new Menu();
-        $menu -> setIdMenu($row[0]);
-        $menu -> setPrice($row[1]);
-        $menu -> setName($row[2]);
-        $menu -> setProdcuts($this->getProductosFromMenu($row[0]));
-        array_push($menus, $menu);
-      }
-      return $menus;
-    } catch (PDOException $e) {
-      $e->getMessage();
+    $dataBase = new ConnectionDB();
+    $menus = array();
+    $sql = 'SELECT idMenu, precio, nombre FROM Menus
+            INNER JOIN RestaurantesPorMenus
+            ON Menus.idMenu = RestaurantesPorMenus.idMenu
+            WHERE NITRestaurate = :$idRestaurant';
+    $result = $dataBase -> executeQuery($sql, array(':$idRestaurant'=>$idRestaurant));
+    for ($i=0; $i < count($result) ; $i++) {
+      $menu = new Menu();
+      $menu -> setIdMenu($result[$i]['idMenu']);
+      $menu -> setName($result[$i]['nombre']);
+      $menu -> setPrice($result[$i]['precio']);
+      array_push($menus, $menu);
     }
+    return $menus;
   }
   public function insertMenuToRestaurant($menu='', $idRestaurant)
   {
     $dataBase = new ConnectionDB();
-    $sql = '';
-    $result = $dataBase -> executeInsert($sql);
-
-    return $result;
+    $sql = 'INSERT INTO Menus (idMenu, precio, nombre) VALUES (null, :precio, :nombre)';
+    $result = $dataBase -> executeInsert($sql, array(
+      ':precio' => $ingredient -> getQuantity(),
+      ':nombre' => $ingredient -> getName()
+    ));
+    // $idIngredient = $dataBase -> executeQuery(SELECT MAX(idIngrediente) AS lastId FROM Ingredientes);
+    $idMenu = $dataBase -> connect() -> lastInsertId();
+    $sql = 'INSERT INTO RestaurantesPorMenus (NITRestaurate, idMenu) VALUES (:idRestaurant, :idMenu)';
+    $result2 = $dataBase -> executeInsert($sql, array(
+      ':idRestaurant' => $idRestaurant,
+      ':idMenu'=> $idMenu
+    ));
+    return ($result && $result2);
   }
-  public function getMenuByRestaurant($idRestaurant='')
+  public function getMenu($idMenu='')
   {
     $dataBase = new ConnectionDB();
-    $sql = '';
-    $result = $dataBase -> executeQuery($sql);
-
-    return $result;
+    $sql = 'SELECT * FROM Menus WHERE idMenu = :idMenu';
+    $result = $dataBase -> executeQuery($sql, array(':idMenu'=>$idMenu));
+    $menu = null;
+    if ($result != false) {
+      $menu = new Menu();
+      $menu -> setIdMenu($result[0]['idMenu']);
+      $menu -> setName($result[0]['nombre']);
+      $menu -> setPrice($result[0]['precio']);
+    }
+    return $menu;
   }
   public function deleteMenu($idMenu)
   {

@@ -9,16 +9,16 @@
     public function getCountries()
     {
       $dataBase = new ConnectionDB();
-      $sql = '';
+      $sql = 'SELECT * FROM Paises';
       $result = $dataBase -> executeQuery($sql);
 
       return $result;
     }
-    public function getCities()
+    public function getCitiesByCountry($idCountry)
     {
       $dataBase = new ConnectionDB();
-      $sql = '';
-      $result = $dataBase -> executeQuery($sql);
+      $sql = 'SELECT idCiudad, ciudad FROM Ciudades WHERE idPais = :idPais';
+      $result = $dataBase -> executeQuery($sql, array($idCountry));
 
       return $result;
     }

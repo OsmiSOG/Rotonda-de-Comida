@@ -29,12 +29,22 @@ class ModifiableIngredient implements InterfaceModifiableIngredient
 
     return $result;
 	}
-	public function getModifiableIngredientByIngredient($modifiableIngredient){
+	public function getModifiableIngredientsByIngredient($idIngredient){
 		$dataBase = new ConnectionDB();
-    $sql = '';
-    $result = $dataBase -> executeQuery($sql);
-
-    return $result;
+    $sql = 'SELECT * FROM Modificables WHERE idIngrediente = :idIngrediente';
+    $result = $dataBase -> executeQuery($sql, array(':idIngrediente'=>$idIngredient));
+		$modifiableIngredient = null;
+		if($result != false){
+			$modifiableIngredients = array();
+			for ($i=0; $i <count($result) ; $i++) {
+				$modifiableIngredient = new ModifiableIngredient();
+				$modifiableIngredient -> setIdModifiable($result[$i]['idModifiables']);
+				$modifiableIngredient -> setModification($result[$i]['type']);
+				$modifiableIngredient -> setName($result[$i]['ingrediente']);
+				array_push($modifiableIngredients, $modifiableIngredient);
+			}
+		}
+    return $modifiableIngredients;
 	}
 
 ?>

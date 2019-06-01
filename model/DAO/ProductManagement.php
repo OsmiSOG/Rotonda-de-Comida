@@ -8,36 +8,45 @@
    */
   class ProductManagement implements InterfaceProduct
   {
-    public function getProductosByMenu($idMenu)
+    public function getProductsByMenu($idMenu)
     {
-      try {
-        $products=array()
-        $sql = 'SELECT * FROM Productos
-        INNER JOIN MenusPorProductos
-        ON idProducto = idProducto
+      $dataBase = new ConnectionDB();
+      $sql = 'SELECT Productos.idProducto, Productos.nombre, Productos.precio, Categorias.nombre AS categoria FROM Productos
+        INNER JOIN MenusPorProductos ON Productos.idProducto = MenusPorProductos.idProducto
+        INNER JOIN Categorias ON Productos.idCategoria = Categorias.idCategoria
         WHERE idMenu = :idMenu';
-        $statemet = connect() -> prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_SCROLL));
-        $statemet -> execute(array(':idMenu'=>$idMenu));
-        while ($row = $statement->fetch(PDO::FETCH_NUM, PDO::FETCH_ORI_NEXT)){
+      $result = $dataBase -> executeQuery($sql, array(':idMenu'=>$idMenu));
+      $products = null;
+      if ($result != false) {
+        $products=array();
+        for ($i=0; $i < count($result) ; $i++) {
           $product = new Product();
-          $product -> setIdProduct($row[0]);
-          $product -> setName($row[1]);
-          $product -> setPrice($row[2]);
-          $product -> setCategory($this->getProductCategory());
-          $product -> setIngredients($this->getIngredientsFromProduct());
+          $product -> setIdProduct($result[$i]['idProducto']);
+          $product -> setName($result[$i]['nombre']);
+          $product -> setPrice($result[$i]['precio']);
+          $product -> setcategory($result[$i]['categoria'])
           array_push($products, $product);
         }
-      } catch (PDOException $e) {
 
       }
     }
-    public function insertProductToMenu($product='')
+    public function insertProductToMenu($product='', $idCategory, $idMenu)
     {
       $dataBase = new ConnectionDB();
-      $sql = '';
-      $result = $dataBase -> executeInsert($sql);
-
-      return $result;
+      $sql = 'INSERT INTO Productos (idProducto, nombre, precio, idCategoria) VALUES (null, :precio, :nombre, :idCategoria)';
+      $result = $dataBase -> executeInsert($sql, array(
+        ':nombre' => $product -> getName(),
+        ':precio' => $product -> getPrice(),
+        ':idCategoria' => $idCategory
+      ));
+      // $idIngredient = $dataBase -> executeQuery(SELECT MAX(idIngrediente) AS lastId FROM Ingredientes);
+      $idProduct = $dataBase -> connect() -> lastInsertId();
+      $sql = 'INSERT INTO MenusPorProductos (idMenu, idProducto) VALUES (:idMenu, :idProduct)';
+      $result2 = $dataBase -> executeInsert($sql, array(
+        ':idMenu' => $idMenu,
+        ':idProduct'=> $idProduct
+      ));
+      return ($result && $result2);
     }
     public function deleteProduct($idProduct='')
     {

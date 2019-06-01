@@ -11,35 +11,40 @@
 
     public function getRestaurants()
     {
-      try {
+      $dataBase = new ConnectionDB();
+      $sql='SELECT * FROM Restaurantes';
+      $result = $dataBase -> executeQuery($sql);
+      $restaurants = null;
+      if($result != false){
         $restaurants = array();
-        $sql='SELECT * FROM Restaurantes';
-        $statemet = connect() -> prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_SCROLL));
-        $statemet->execute();
-        while ($row = $statement->fetch(PDO::FETCH_NUM, PDO::FETCH_ORI_NEXT)) {
+        for ($i=0; $i < count($result) ; $i++) {
           $restaurant = new Restaurant();
-          $restaurant -> setNIT($row[0]);
-          $restaurant -> setName($row[1]);
-          $restaurant -> setAddress();
-          $restaurant -> calculateAvailability($row[2], $row[3]);
-          $restaurant -> specialty($this->getSpecialtyXRestaurant($row[5]));
-          $restaurant -> setMenus();
-          $restaurant -> setProdcuts();
+          $restaurant -> setNit();
+          $restaurant -> setName();
+          // $restaurant -> setDirection();
+          $restaurant -> setSpecialty();
           array_push($restaurants, $restaurant);
         }
-        $result = $statemet->fetch();
-
-      } catch (PDOException $e) {
-        $e->getMessage();
       }
+      return $restaurants;
     }
 
-    public function insertRestaurant($restaurant)
+    public function insertRestaurant($restaurant, $idSpecialty, $password)
     {
       $dataBase = new ConnectionDB();
-      $sql = '';
-      $result = $dataBase -> executeInsert($sql);
-
+      $sql = 'INSERT INTO Restaurates (NIT, nombre, password, idEspecialidad) VALUES (:NIT, :nombre, :password, :idEspecialidad)';
+      $result = $dataBase -> executeInsert($sql, array(
+        ':NIT'=>$restaurant->getNit(),
+        ':nombre'=>$restaurant->getName(),
+        ':password'=>$password,
+        ':idEspecialidad'=>$idSpecialty
+      ));
+      $sql = 'INSERT INTO DireccionesRestaurante (idDireccionesRestaurante, idCiudad, direccion, NITRestaurate) VALUES (null, :idCiudad, :direccion, :NITRestaurate)';
+      $result = $dataBase->executeInsert($sql, array(
+        ':idCiudad' => $restaurant -> getDirection()[1],
+        ':direccion' => $restaurant -> getDirection()[2],
+        ':NITRestaurate' -> getNit()
+      ));
       return $result;
     }
 

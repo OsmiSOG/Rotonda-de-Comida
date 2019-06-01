@@ -6,7 +6,7 @@
    *
    */
   class ClientManagement implements InterfaceClient
-  { 
+  {
     public function insertClient($client, $password)
     {
       $dataBase = new ConnectionDB();
@@ -28,46 +28,45 @@
 
     public function getClientByNumberPhone($numberPhone)
     {
-      try {
-        $sql = 'SELECT * FROM Clientes WHERE Cedula = :cedula';
-        $statemet = connect() -> prepare($sql);
-        $statemet->execute(array(':cedula'=>$identification));
-        $result = $statemet->fetch();
-        $client = null;
-        if(!$result){
-          $client = new Client();
-          $client -> setIdentification($result['cedula']);
-          $client -> setName($result['Nombre']);
-          $client -> setBirthdayDate($result['fechaNacimiento']);
-          $client -> setPhone($result['celular']);
-        }
-        $statement = null;
-        return $client;
-      } catch (PDOException $e) {
-        echo $e->getMessage;
+      $dataBase = new ConnectionDB();
+      $sql = 'SELECT * FROM Clientes WHERE celular = :celular';
+      $result = $dataBase->executeQuery($sql, array(':celular'=>$numberPhone));
+      $client = null;
+      if(!$result){
+        $client = new Client();
+        $client -> setIdentification($result['cedula']);
+        $client -> setName($result['Nombre']);
+        $client -> setPhone($result['celular']);
+        // $client -> setDirection();
       }
+      return $client;
     }
-    
+
     public function getPasswordByNumberPhone($numberPhone)
     {
-      try {
-        $sql = 'SELECT password FROM Clientes WHERE Cedula = :cedula';
-        $statemet = connect() -> prepare($sql);
-        $statemet->execute(array(':cedula'=>$identification));
-        $result = $statemet->fetch();
-        $password = null;
-        if(!$result){
-            $password = $result['password'];
-        }
-        $statement = null;
-        return $password;
-      } catch (PDOException $e) {
-        echo $e->getMessage;
+      $dataBase = new ConnectionDB();
+      $sql = 'SELECT password FROM Clientes WHERE celular = :celular';
+      $result = $dataBase -> executeQuery($sql, $array(':celular'=>$numberPhone));
+      $password = null;
+      if(!$result){
+          $password = $result['password'];
       }
+      return $password;
     }
     public function getClientByIdentification($identification='')
     {
-      
+      $dataBase = new ConnectionDB();
+      $sql = 'SELECT * FROM Clientes WHERE cedula = :cedula';
+      $result = $dataBase->executeQuery($sql, array(':cedula'=>$identification));
+      $client = null;
+      if(!$result){
+        $client = new Client();
+        $client -> setIdentification($result['cedula']);
+        $client -> setName($result['Nombre']);
+        $client -> setPhone($result['celular']);
+        // $client -> setDirection();
+      }
+      return $client;
     }
   }
 
