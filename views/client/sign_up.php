@@ -18,36 +18,32 @@
     <form class="form" action=<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?> method="post">
       <div class="input-form">
         <label for="">nombre</label>
-        <input type="text" name="name" value="" placeholder="Tu nombre">
+        <input type="text" name="name" value="" placeholder="Tu nombre" required>
       </div>
       <div class="input-form">
         <label for="">cedula</label>
-        <input type="number" name="identification" value="" placeholder="Numero de identificación">
+        <input type="number" name="identification" value="" placeholder="Numero de identificación" required>
       </div>
       <div class="input-form">
-        <label for="">fecha de nacimiento</label>
-        <input type="date" name="birthdate" value="">
-      </div>
-      <div class="input-form">
-        <label for="">correo</label>
-        <input type="email" name="email" value="" placeholder="example@dominio">
+        <label for="">celular</label>
+        <input type="number" name="cellphone" value="" placeholder="celular" required>
       </div>
       <div class="input-form">
         <label for="">direccion</label>
         <div class="input-form">
           <label for="">pais</label>
-          <select class="select-form" name="country">
+          <select class="select-form" name="country" required>
           </select>
           <label for="">ciudad</label>
-          <select class="select-form" name="city">
+          <select class="select-form" name="city" required>
           </select>
-          <label for="">direccion</label>
-          <input type="text" name="" value="">
+          <label for="">nomenclatura</label>
+          <input type="text" name="nomenclature" value="" required>
         </div>
       </div>
       <div class="input-form">
         <label for="">password</label>
-        <input type="password" name="" value="" placeholder="password">
+        <input type="password" name="password" value="" placeholder="password" required>
       </div>
       <div class="input-form">
       <button class="botones" type="button" name="button">Registrar </button>

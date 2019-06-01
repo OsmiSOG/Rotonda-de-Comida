@@ -8,10 +8,15 @@ require_once $_SERVER['DOCUMENT_ROOT'].'/Rotonda-de-Comida/model/transferObject/
  */
 class ingredientManagement implements InterfaceIngredient
 {
-
-  function __construct(argument)
+  public function getIngredientsFromProduct($value='')
   {
-    // code...
+    try {
+
+    } catch (PDOException $e) {
+
+    }
+
+    $sql = '';
   }
 }
 

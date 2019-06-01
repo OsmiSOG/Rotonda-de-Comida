@@ -7,7 +7,7 @@ class Restaurant
   private $name;
   private $nit;
   private $idDirection;
-  private $idSpecialty;
+  private $Specialty;
 
   function __construct($name=null, $nit=null, $idDirection=null, $idSpecialty=null)
   {

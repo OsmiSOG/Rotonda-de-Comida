@@ -25,26 +25,26 @@
         <input type="number" name="NIT" value="">
       </div>
       <div class="input-form">
-        <p>Location</p>
-        <label for="">Country</label>
-        <select class="" name="">
+        <p>Localizacion</p>
+        <label for="">Pais</label>
+        <select class="" name="country">
 
         </select>
-        <label for="">City</label>
-        <select class="" name="">
+        <label for="">Ciudad</label>
+        <select class="" name="city">
 
         </select>
-        <label for="">Direction</label>
-        <input type="text" name="" value="">
+        <label for="">Direccion</label>
+        <input type="text" name="nomenclature" value="">
       </div>
       <div class="input-form">
-        <label for="">specialty</label>
+        <label for="">Especialidad</label>
         <select class="" name="">
 
         </select>
       </div>
       <div class="input-form">
-        <label for="">password</label>
+        <label for="">Password</label>
         <input type="password" name="" value="">
       </div>
       <div class="input-form">

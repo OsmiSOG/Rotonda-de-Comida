@@ -7,10 +7,16 @@ require_once $_SERVER['DOCUMENT_ROOT'].'rotonda-de-comida/model/transferObject/O
 
 class OrderManagement implements InterfaceOrder
 {
-	function _construct(){
-	
-	}
-	
-	
 
+	    public function insertNewOrder($value='')
+	    {
+	      // code...
+	    }
+
+			public function getOrder($value='')
+	    {
+	      // code...
+	    }
+
+}
 ?>

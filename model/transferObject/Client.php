@@ -8,14 +8,14 @@
     private $name;
     private $cedula;
     private $cellPhone;
-    private $idDirection;
+    private $direction;
 
-    function __construct($name=null, $cedula=null, $cellPhone=null, $idDirection=null)
+    function __construct($name=null, $cedula=null, $cellPhone=null, $direction=null)
     {
       $this->name=$name;
       $this->cedula=$cedula;
       $this->cellPhone=$cellPhone;
-      $this->idDirection=$idDirection;
+      $this->direction=$direction;
     }
 
     public function getName()
@@ -42,13 +42,13 @@
     {
       $this->cellPhone=$cellPhone;
     }
-    public function getIdDirection()
+    public function getDirection()
     {
-      return $this->idDirection;
+      return $this->direction;
     }
-    public function setIdDirection($idDirection)
+    public function setDirection($direction)
     {
-      $this->idDirection=$idDirection;
+      $this->direction=$direction;
     }
   }
 
