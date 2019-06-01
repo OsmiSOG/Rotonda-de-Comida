@@ -6,34 +6,27 @@
    *
    */
   class ClientManagement implements InterfaceClient
-  {
-    protected $clietLog;
-
-    function __construct()
+  { 
+    public function insertClient($client, $password)
     {
-      parent::__construct();
-      $this->clietLog = new Client();
+      $dataBase = new ConnectionDB();
+      $sql = 'INSERT INTO Clientes (cedula, Nombre, password, celular) VALUES (:cedula, :nombre, :password, :celular)';
+      $result = $dataBase->executeInsert($sql, array(
+        ':cedula' => $client -> getCedula(),
+        ':nombre' => $client -> getName(),
+        ':password' => $password,
+        ':celular' => $client -> getCellPhone()
+      ));
+      $sql = 'INSERT INTO DireccionesCliente (idCiudad, direccion, cedulaCliente) VALUES (:idCiudad, :direccion, :cedulaCliente)';
+      $result = $dataBase->executeInsert($sql, array(
+        ':idCiudad' => $client -> getDirection()[1],
+        ':direccion' => $client -> getDirection()[2],
+        ':cedulaCliente' => $client -> getCedula()
+      ));
+      return $result;
     }
 
-    public function insertClient($client)
-    {
-      try {
-        $client = new Client;
-        $statemet = connect() -> prepare('INSERT INTO Clientes (cedula, Nombre, fechaNacimiento, celular) VALUES (:cedula, :nombre, :fechaNacimiento, :celular)');
-        $statemet->execute(array(
-          ':cedula' => $client -> getIdentification(),
-          ':nombre' => $client -> getName(),
-          ':fechaNacimiento' => $client -> getBirthdayDate(),
-          ':celular' => $client -> getPhone()
-        ));
-        $statement = null;
-      } catch (PDOException $e) {
-        $e->getMessage();
-      }
-      return $client;
-    }
-
-    public function getClientXIdentification($identification)
+    public function getClientByNumberPhone($numberPhone)
     {
       try {
         $sql = 'SELECT * FROM Clientes WHERE Cedula = :cedula';
@@ -54,7 +47,9 @@
         echo $e->getMessage;
       }
     }
-    public getPasswordByIdentification($identification){
+    
+    public function getPasswordByNumberPhone($numberPhone)
+    {
       try {
         $sql = 'SELECT password FROM Clientes WHERE Cedula = :cedula';
         $statemet = connect() -> prepare($sql);
@@ -69,6 +64,10 @@
       } catch (PDOException $e) {
         echo $e->getMessage;
       }
+    }
+    public function getClientByIdentification($identification='')
+    {
+      
     }
   }
 

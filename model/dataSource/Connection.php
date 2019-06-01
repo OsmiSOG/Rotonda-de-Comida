@@ -2,7 +2,7 @@
   /**
    *
    */
-  class ConnectionDB extends AnotherClass
+  class ConnectionDB
   {
     private $host;
     private $db;
@@ -50,11 +50,17 @@
 
     public function executeInsert($sql='', $values=array())
     {
-      if($sql != ''){
-        $statement = $this->connect() -> prepare($sql);
-        $statement -> execute($values);
-        $result = ($statement->rowCount() > 0);
+      try {
+        if($sql != ''){
+          $statement = $this->connect() -> prepare($sql);
+          $statement -> execute($values);
+          $result = ($statement->rowCount() > 0);
+          return $result;
+        }
+      } catch (PDOException $e) {
+        print_r( $e -> getMessage());
       }
+      
     }
     public function executeUpdate($sql='', $values=array())
     {
@@ -77,7 +83,6 @@
         return false;
       }
     }
-  }
   }
 
 

@@ -8,15 +8,54 @@ require_once $_SERVER['DOCUMENT_ROOT'].'rotonda-de-comida/model/transferObject/O
 class OrderManagement implements InterfaceOrder
 {
 
-	    public function insertNewOrder($value='')
+	    public function insertOrder($order='')
 	    {
-	      // code...
+				$dataBase = new ConnectionDB();
+		    $sql = '';
+		    $result = $dataBase -> executeInsert($sql);
+
+		    return $result;
 	    }
 
-			public function getOrder($value='')
+			public function getOrdersByClient($idClient='')
 	    {
-	      // code...
-	    }
+				$dataBase = new ConnectionDB();
+		    $sql = '';
+		    $result = $dataBase -> executeQuery($sql);
 
+		    return $result;
+	    }
+			public function getLastOrderByRestaurant($idRestaurant='')
+			{
+				$dataBase = new ConnectionDB();
+		    $sql = '';
+		    $result = $dataBase -> executeQuery($sql);
+
+		    return $result;
+			}
+			public function updateOrderActive($value='')
+			{
+				$dataBase = new ConnectionDB();
+		    $sql = '';
+		    $result = $dataBase -> executeQuery($sql);
+
+		    return $result;
+			}
+			public function selectOrdersByRestaurant($idRestaurant='')
+			{
+				$dataBase = new ConnectionDB();
+		    $sql = '';
+		    $result = $dataBase -> executeQuery($sql);
+
+		    return $result;
+			}
+			public function selectOrdersActiveByRestaurant($idRestaurant='')
+			{
+				$dataBase = new ConnectionDB();
+		    $sql = '';
+		    $result = $dataBase -> executeQuery($sql);
+
+		    return $result;
+			}
 }
 ?>

@@ -4,6 +4,7 @@
  */
 class ModifiableIngredient
 {
+  private $idModifiable;
   private $modification;
   private $name;
 
@@ -11,6 +12,14 @@ class ModifiableIngredient
   {
     $this->modification=$modification;
     $this->name=$name;
+  }
+  public function getIdModifiable()
+  {
+    return $this->idModifiable;
+  }
+  public function setIdModifiable($idModifiable)
+  {
+    $this->idModifiable=$idModifiable;
   }
   public function getModification()
   {

@@ -6,7 +6,7 @@ require_once $_SERVER['DOCUMENT_ROOT'].'/Rotonda-de-Comida/model/transferObject/
 /**
  *
  */
-class menuManagement implements interfacesMenu
+class MenuManagement implements interfacesMenu
 {
 
   public function getRestaurantMenus($idRestaurant)
@@ -31,7 +31,26 @@ class menuManagement implements interfacesMenu
     } catch (PDOException $e) {
       $e->getMessage();
     }
+  }
+  public function insertMenuToRestaurant($menu='', $idRestaurant)
+  {
+    $dataBase = new ConnectionDB();
+    $sql = '';
+    $result = $dataBase -> executeInsert($sql);
 
+    return $result;
+  }
+  public function getMenuByRestaurant($idRestaurant='')
+  {
+    $dataBase = new ConnectionDB();
+    $sql = '';
+    $result = $dataBase -> executeQuery($sql);
+
+    return $result;
+  }
+  public function deleteMenu($idMenu)
+  {
+    // code...
   }
 }
 

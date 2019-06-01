@@ -7,16 +7,16 @@ class Product
   private $name
   private $price;
   private $idProduct;
-  private $idCategory;
-  private $idIngredient;
+  private $category;
+  private $ingredient;
 
-  function __construct($name=null, $price=null, $idProduct=null, $idCategory=null, $idIngredient=null)
+  function __construct($name=null, $price=null, $idProduct=null, $category=null, $ingredient=null)
   {
     $this->name=$name;
     $this->price=$price;
     $this->idProduct=$idProduct;
-    $this->idCategory=$idCategory;
-    $this->idIngredient=$idIngredient;
+    $this->category=$category;
+    $this->ingredient=$ingredient;
   }
 
   public function getName()
@@ -43,21 +43,21 @@ class Product
   {
     $this->idProduct=$idProduct;
   }
-  public function getIdCategory()
+  public function getcategory()
   {
-    return $this->idCategory;
+    return $this->category;
   }
-  public function setIdCategory($idCategory)
+  public function setcategory($category)
   {
-    $this->idCategory=$idCategory;
+    $this->category=$category;
   }
-  public function getIdIngredient()
+  public function getingredient()
   {
-    return $this->idIngredient;
+    return $this->ingredient;
   }
-  public function setIdIngredient($idIngredient)
+  public function setingredient($ingredient)
   {
-    $this->idIngredient=$idIngredient;
+    $this->ingredient=$ingredient;
   }
 }
  ?>

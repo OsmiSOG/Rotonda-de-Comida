@@ -8,16 +8,39 @@ require_once $_SERVER['DOCUMENT_ROOT'].'/Rotonda-de-Comida/model/transferObject/
  */
 class ingredientManagement implements InterfaceIngredient
 {
-  public function getIngredientsFromProduct($value='')
+  public function getIngredients()
   {
-    try {
-
-    } catch (PDOException $e) {
-
-    }
-
+    $dataBase = new ConnectionDB();
     $sql = '';
+    $result = $dataBase -> executeQuery($sql);
+
+    return $result;
   }
+  public function getIngredientsByMenu($idMenu)
+  {
+    $dataBase = new ConnectionDB();
+    $sql = '';
+    $result = $dataBase -> executeQuery($sql);
+
+    return $result;
+  }
+  public function getIngredientsByProduct($idProduct)
+  {
+    $dataBase = new ConnectionDB();
+    $sql = '';
+    $result = $dataBase -> executeQuery($sql);
+
+    return $result;
+  }
+  public function insertIngredientToProduct($ingredient)
+  {
+    $dataBase = new ConnectionDB();
+    $sql = '';
+    $result = $dataBase -> executeInsert($sql);
+
+    return $result;
+  }
+  
 }
 
  ?>

@@ -8,7 +8,7 @@
    */
   class ProductManagement implements InterfaceProduct
   {
-    public function getProductosFromMenu($idMenu)
+    public function getProductosByMenu($idMenu)
     {
       try {
         $products=array()
@@ -30,21 +30,23 @@
       } catch (PDOException $e) {
 
       }
-
     }
-
-    public function getProductCategory($idCategory)
+    public function insertProductToMenu($product='')
     {
-      try {
-        $sql = 'SELECT * FROM Categorias WHERE idCategoria = :idCategory';
-        $statemet = connect() -> prepare($sql);
-        $statemet -> execute(array(':idCategory' => $idCategory));
-      } catch (PDOException $e) {
-        $e -> getMessage();
-      }
+      $dataBase = new ConnectionDB();
+      $sql = '';
+      $result = $dataBase -> executeInsert($sql);
 
+      return $result;
     }
+    public function deleteProduct($idProduct='')
+    {
+      $dataBase = new ConnectionDB();
+      $sql = '';
+      $result = $dataBase -> executeDelete($sql);
 
+      return $result;
+    }
   }
 
 ?>

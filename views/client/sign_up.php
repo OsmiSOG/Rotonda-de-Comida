@@ -21,7 +21,7 @@
         <input type="text" name="name" value="" placeholder="Tu nombre" required>
       </div>
       <div class="input-form">
-        <label for="">cedula</label>
+        <label for="identification">cedula</label>
         <input type="number" name="identification" value="" placeholder="Numero de identificación" required>
       </div>
       <div class="input-form">
@@ -32,13 +32,13 @@
         <label for="">direccion</label>
         <div class="input-form">
           <label for="">pais</label>
-          <select class="select-form" name="country" required>
+          <select class="select-form" name="country" >
           </select>
           <label for="">ciudad</label>
-          <select class="select-form" name="city" required>
+          <select class="select-form" name="city" >
           </select>
           <label for="">nomenclatura</label>
-          <input type="text" name="nomenclature" value="" required>
+          <input type="text" name="nomenclature" value="" >
         </div>
       </div>
       <div class="input-form">
@@ -46,7 +46,7 @@
         <input type="password" name="password" value="" placeholder="password" required>
       </div>
       <div class="input-form">
-      <button class="botones" type="button" name="button">Registrar </button>
+      <button class="botones" type="submit" name="button">Registrar </button>
       </div>
     </form>
   </body>

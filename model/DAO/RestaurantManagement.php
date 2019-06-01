@@ -32,24 +32,18 @@
       } catch (PDOException $e) {
         $e->getMessage();
       }
-
     }
 
-    public function getSpecialtyXIdRestaurant($idSpecialty)
+    public function insertRestaurant($restaurant)
     {
-      try {
-        $sql = 'SELECT nombre FROM Especialidades WHERE idEspecialidades = :idEspecialidad;'
-        $statemet = connect() -> prepare($sql);
-        $statemet -> execute(array('idEspecialidad' => $idSpecialty));
-        $result = $statemet -> fetch();
-        return $result['nombre'];
-      } catch (PDOException $e) {
-        $e->getMessage();
-      }
+      $dataBase = new ConnectionDB();
+      $sql = '';
+      $result = $dataBase -> executeInsert($sql);
 
+      return $result;
     }
 
-    public getPasswordByIdentification($identification){
+    public function getPasswordByNit($Nit){
       try {
         $sql = 'SELECT password FROM Restaurant WHERE NIT = :NIT';
         $statemet = connect() -> prepare($sql);
@@ -66,10 +60,15 @@
       }
     }
 
-    public function insertRestaurant($restaurant)
+    public function getRestaurantByNit($nit='')
     {
-      // code...
+      $dataBase = new ConnectionDB();
+      $sql = '';
+      $result = $dataBase -> executeQuery($sql);
+
+      return $result;
     }
+
   }
 
 ?>

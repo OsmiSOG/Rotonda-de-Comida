@@ -1,8 +1,13 @@
 <?php
-session_start();
-include_once '../../model/DAO/RestaurantManagement.php';
-include_once '../../model/DAO/Restaurant.php';
+ini_set('display_errors', 1);
+error_reporting(-1);
 
+session_start();
+
+include_once '../../model/DAO/RestaurantManagement.php';
+include_once '../../model/transferObject/Restaurant.php';
+
+$runState = '';
 if (isset($_SESSION['restaurant'])) {
   header('location: home.php');
 } else {
@@ -10,20 +15,20 @@ if (isset($_SESSION['restaurant'])) {
       $nit = $_POST ['NIT'];
       $password = $_POST ['password'];
       $restaurantManagement = new RestaurantManagement();
-      $restaurant = $restaurantManagement -> getClientXIdentification($nit);
+      $restaurant = $restaurantManagement -> getRestaurantByNit($nit);
       if ($restaurant != null) {
-           if (password_verify ( $password , $restaurantManagement-> getPasswordByIdentification($nit) )) {
+           if (password_verify ( $password , $restaurantManagement-> getPasswordByNit($nit) )) {
              $_SESSION['restaurant']= $nit;
              header('location: home.php');
 
            }else {
-             $runState 'password incorrecto';
+             $runState = 'password incorrecto';
            }
       }else {
-        $runState ' este restaurante no existe '
+        $runState = 'este restaurante no existe ';
       }
   }
 }
-
+//
 require_once '../../views/restaurant/sign_in.php';
 ?>
