@@ -1,7 +1,7 @@
 <?php
 ini_set('display_errors', 1);
 error_reporting(-1);
-  
+
 session_start();
 include_once '../../model/DAO/ClientManagement.php';
 include_once '../../model/transferObject/Client.php';
@@ -27,9 +27,7 @@ if (isset($_SESSION['client'])) {
       $error = 'Este usuario ya existente';
     }
   } else {
-    
   }
 }
-
 require_once '../../views/client/sign_up.php';
 ?>
