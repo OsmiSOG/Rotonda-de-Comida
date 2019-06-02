@@ -18,28 +18,33 @@
     <form class="form" action=<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?> method="post">
       <div class="input-form">
         <label for="">name restaurant</label>
-        <input type="text" name="name" value="">
+        <input type="text" name="name" value="" required>
       </div>
       <div class="input-form">
         <label for="">NIT</label>
-        <input type="number" name="NIT" value="">
+        <input type="number" name="NIT" value="" required>
       </div>
       <div class="input-form">
         <p>Localizacion</p>
         <label for="">Pais</label>
         <select class="" name="country">
-
+          <option disabled selected>Escoje tu pais</option>
+          <?php for ($i=0; $i <count($countries) ; $i++): ?>
+            <option value=<?php echo $countries[$i]['idPais']; ?>><?php echo $countries[$i]['pais']; ?></option>
+          <?php endfor; ?>
         </select>
         <label for="">Ciudad</label>
         <select class="" name="city">
-
+          <?php if(empty($cities)): ?>
+            <option disabled selected>Escoje tu pais</option>
+          <?php endif; ?>
         </select>
         <label for="">Direccion</label>
         <input type="text" name="nomenclature" value="">
       </div>
       <div class="input-form">
         <label for="">Especialidad</label>
-        <select class="" name="">
+        <select class="" name="specialty">
 
         </select>
       </div>
