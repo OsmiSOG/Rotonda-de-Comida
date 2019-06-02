@@ -59,11 +59,11 @@
       $sql = 'SELECT * FROM Clientes WHERE cedula = :cedula';
       $result = $dataBase->executeQuery($sql, array(':cedula'=>$identification));
       $client = null;
-      if(!$result){
+      if($result != false){
         $client = new Client();
-        $client -> setIdentification($result['cedula']);
-        $client -> setName($result['Nombre']);
-        $client -> setPhone($result['celular']);
+        $client -> setCedula($result[0]['cedula']);
+        $client -> setName($result[0]['Nombre']);
+        $client -> setCellPhone($result[0]['celular']);
         // $client -> setDirection();
       }
       return $client;
