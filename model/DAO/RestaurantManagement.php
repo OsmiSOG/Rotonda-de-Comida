@@ -49,20 +49,15 @@
     }
 
     public function getPasswordByNit($Nit){
-      try {
-        $sql = 'SELECT password FROM Restaurant WHERE NIT = :NIT';
-        $statemet = connect() -> prepare($sql);
-        $statemet->execute(array(':NIT'=>$identification));
-        $result = $statemet->fetch();
-        $password = null;
-        if(!$result){
-            $password = $result['password'];
-        }
-        $statement = null;
-        return $password;
-      } catch (PDOException $e) {
-        echo $e->getMessage;
+      $dataBase = new ConnectionDB();
+      $sql = 'SELECT password FROM Restaurant WHERE NIT = :NIT';
+      $result = $dataBase -> executeQuery($sql, array(':NIT'=>$Nit));
+      $password = null;
+      if(!$result){
+          $password = $result[0]['password'];
       }
+      return $password;
+
     }
 
     public function getRestaurantByNit($nit='')

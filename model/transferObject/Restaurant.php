@@ -9,12 +9,12 @@ class Restaurant
   private $direction;
   private $specialty;
 
-  function __construct($name=null, $nit=null, $direction=null, $idSpecialty=null)
+  function __construct($name=null, $nit=null, $direction=null, $specialty=null)
   {
     $this->name=$name;
     $this->nit=$nit;
     $this->direction=$direction;
-    $this->idSpecialty=$idSpecialty;
+    $this->specialty=$specialty;
 
   }
   public function getName()

@@ -46,7 +46,7 @@
     {
       $dataBase = new ConnectionDB();
       $sql = 'SELECT password FROM Clientes WHERE celular = :celular';
-      $result = $dataBase -> executeQuery($sql, $array(':celular'=>$numberPhone));
+      $result = $dataBase -> executeQuery($sql, array(':celular'=>$numberPhone));
       $password = null;
       if(!$result){
           $password = $result['password'];
