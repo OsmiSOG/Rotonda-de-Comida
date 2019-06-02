@@ -1,7 +1,7 @@
 <?php
 ini_set('display_errors', 1);
 error_reporting(-1);
-  
+
 session_start();
 include_once '../../model/DAO/ClientManagement.php';
 include_once '../../model/transferObject/Client.php';
@@ -19,7 +19,7 @@ if (isset($_SESSION['client'])) {
       $client -> setCellPhone($_POST['cellphone']);
       $client -> setDirection(array($_POST['country'], $_POST['city'], $_POST['nomenclature']));
       $result = $clientDAO -> insertClient($client, password_hash($_POST['password'], PASSWORD_BCRYPT));
-      if($result){
+      if($result == true){
         $_SESSION['client'] = $client -> getCellPhone();
         header('location: restaurants.php');
       }
@@ -27,7 +27,7 @@ if (isset($_SESSION['client'])) {
       $error = 'Este usuario ya existente';
     }
   } else {
-    
+
   }
 }
 
