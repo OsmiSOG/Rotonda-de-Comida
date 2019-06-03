@@ -2,7 +2,7 @@
 session_start();
 include_once ''; // incluir dao
 
-if (isset($_SESSION['home'])) {
+if (isset($_SESSION['restaurant'])) {
   // code...
 } else  {
   // code...

@@ -25,13 +25,13 @@ class Restaurant
   {
     $this->name=$name;
   }
-  public function setNit()
-  {
-    return $this->nit;
-  }
-  public function getNit($nit)
+  public function setNit($nit)
   {
     $this->nit=$nit;
+  }
+  public function getNit()
+  {
+    return $this->nit;
   }
   public function getdirection()
   {

@@ -11,14 +11,13 @@
     header('location: restaurants.php');
   } else {
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-      echo "string";
-      $cellphone = $_POST ['cellphone'];
-      $password = $_POST ['password'];
+      $cellphone = $_POST['cellphone'];
+      $password = $_POST['password'];
       $clientManagement = new ClientManagement();
       $client = $clientManagement -> getClientByNumberPhone($cellphone);
       if ($client != null) {
-           if (password_verify ($password, $clientManagement-> getPasswordByIdentification($cellphone))) {
-             $_SESSION['client']= $cellphone;
+           if (password_verify($password, $clientManagement-> getPasswordByNumberPhone($cellphone))) {
+             $_SESSION['client'] = $cellphone;
              header('location: restaurants.php');
            } else {
              $runState = 'password incorrecto';

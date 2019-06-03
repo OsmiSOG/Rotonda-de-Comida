@@ -18,7 +18,7 @@
     {
       $dataBase = new ConnectionDB();
       $sql = 'SELECT idCiudad, ciudad FROM Ciudades WHERE idPais = :idPais';
-      $result = $dataBase -> executeQuery($sql, array($idCountry));
+      $result = $dataBase -> executeQuery($sql, array(':idPais'=>$idCountry));
 
       return $result;
     }
