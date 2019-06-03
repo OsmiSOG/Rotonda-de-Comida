@@ -11,7 +11,9 @@ include_once '../../model/DAO/ProductManagement.php';
 include_once '../../model/transferObject/Restaurant.php'; // incluir dao
 
 if (isset($_SESSION['client'])) {
-  // code...
+  $menuDAO = new MenuManagement();
+  $productsDAO = new ProductManagement();
+
 } else  {
   // code...
   header('location: ../index.php');

@@ -24,7 +24,7 @@
           $product -> setIdProduct($result[$i]['idProducto']);
           $product -> setName($result[$i]['nombre']);
           $product -> setPrice($result[$i]['precio']);
-          $product -> setcategory($result[$i]['categoria'])
+          $product -> setcategory($result[$i]['categoria']);
           array_push($products, $product);
         }
 

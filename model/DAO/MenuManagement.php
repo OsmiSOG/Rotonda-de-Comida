@@ -1,12 +1,12 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'].'/Rotonda-de-Comida/model/dataSource/Connection.php';
-require_once $_SERVER['DOCUMENT_ROOT'].'/Rotonda-de-Comida/model/interface/interfacesMenu.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/Rotonda-de-Comida/model/interfaces/InterfaceMenu.php';
 require_once $_SERVER['DOCUMENT_ROOT'].'/Rotonda-de-Comida/model/transferObject/menu.php';
 
 /**
  *
  */
-class MenuManagement implements interfacesMenu
+class MenuManagement implements interfaceMenu
 {
 
   public function getRestaurantMenus($idRestaurant)
@@ -44,7 +44,7 @@ class MenuManagement implements interfacesMenu
     ));
     return ($result && $result2);
   }
-  public function getMenu($idMenu='')
+  public function getMenuByRestaurant($idMenu='')
   {
     $dataBase = new ConnectionDB();
     $sql = 'SELECT * FROM Menus WHERE idMenu = :idMenu';
@@ -58,10 +58,10 @@ class MenuManagement implements interfacesMenu
     }
     return $menu;
   }
-  public function deleteMenu($idMenu)
-  {
-    // code...
-  }
+  // public function deleteMenu($idMenu)
+  // {
+  //   // code...
+  // }
 
 }
 
