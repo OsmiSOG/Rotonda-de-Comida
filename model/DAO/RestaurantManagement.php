@@ -32,7 +32,7 @@
     public function insertRestaurant($restaurant, $idSpecialty, $password)
     {
       $dataBase = new ConnectionDB();
-      $sql = 'INSERT INTO Restaurates (NIT, nombre, password, idEspecialidad) VALUES (:NIT, :nombre, :password, :idEspecialidad)';
+      $sql = 'INSERT INTO Restaurantes (NIT, nombre, password, idEspecialidad) VALUES (:NIT, :nombre, :password, :idEspecialidad)';
       $result = $dataBase -> executeInsert($sql, array(
         ':NIT'=>$restaurant->getNit(),
         ':nombre'=>$restaurant->getName(),
@@ -43,17 +43,17 @@
       $result = $dataBase->executeInsert($sql, array(
         ':idCiudad' => $restaurant -> getDirection()[1],
         ':direccion' => $restaurant -> getDirection()[2],
-        ':NITRestaurate' -> getNit()
+        ':NITRestaurate' => $restaurant -> getNit()
       ));
       return $result;
     }
 
     public function getPasswordByNit($Nit){
       $dataBase = new ConnectionDB();
-      $sql = 'SELECT password FROM Restaurant WHERE NIT = :NIT';
+      $sql = 'SELECT password FROM Restaurantes WHERE NIT = :NIT';
       $result = $dataBase -> executeQuery($sql, array(':NIT'=>$Nit));
       $password = null;
-      if(!$result){
+      if($result != false){
           $password = $result[0]['password'];
       }
       return $password;
@@ -63,12 +63,32 @@
     public function getRestaurantByNit($nit='')
     {
       $dataBase = new ConnectionDB();
-      $sql = '';
+      $sql = 'SELECT NIT, Restaurantes.nombre AS restaurante, password, Especialidades.nombre AS especialidad FROM Restaurantes JOIN Especialidades
+      ON Restaurantes.idEspecialidad = Especialidades.idEspecialidades
+      WHERE NIT = :NIT';
+      $result = $dataBase -> executeQuery($sql, array(':NIT'=>$nit));
+      $restaurant = null;
+      if ($result != false) {
+        $restaurant = new Restaurant();
+        $restaurant -> setName($result[0]['restaurante']);
+        $restaurant -> setNit($result[0]['NIT']);
+        $sqlDir = 'SELECT idDireccionesRestaurante, ciudad, direccion FROM DireccionesRestaurante JOIN Ciudades
+        ON DireccionesRestaurante.idCiudad = Ciudades.idCiudad
+        WHERE NITRestaurate = :NIT';
+        $restaurant -> setDirection($dataBase -> executeQuery($sqlDir, array(':NIT'=>$nit)));
+        $restaurant -> setSpecialty($result[0]['especialidad']);
+      }
+      return $result;
+    }
+
+    public function getSpecialties()
+    {
+      $dataBase = new ConnectionDB();
+      $sql = 'SELECT * FROM Especialidades';
       $result = $dataBase -> executeQuery($sql);
 
       return $result;
     }
-
   }
 
 ?>

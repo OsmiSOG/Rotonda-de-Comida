@@ -21,14 +21,14 @@
     <form class="form" action=<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?> method="post">
       <div class="input-form">
         <label for="">cellphone</label>
-        <input type="text" name=" cellphone" value="">
+        <input type="text" name="cellphone" value="">
       </div>
       <div class="input-form">
         <label for="">password</label>
-        <input type="text" name="password" value="">
+        <input type="password" name="password" value="">
       </div>
       <div class="input-form">
-        <button class="botones" type="button" name="button  ">sign in</button>
+        <button class="botones" type="submit" name="button  ">sign in</button>
       </div>
     </form>
   </body>
