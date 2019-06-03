@@ -11,6 +11,5 @@ if (isset($_SESSION['client'])) {
   // code...
   header('location: ../index.php');
 }
-
-require_once '../../views/client/menu.php';
+require_once '../../views/client/orders.php';
 ?>

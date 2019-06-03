@@ -9,7 +9,7 @@ if (isset($_SESSION['client'])) {
   // code...
 } else  {
   // code...
-  header('location: ../inicio.php');
+  header('location: ../index.php');
 }
 
 require_once '../../views/client/add_direction.php';
