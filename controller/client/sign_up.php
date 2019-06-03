@@ -4,6 +4,7 @@ error_reporting(-1);
 
 session_start();
 include_once '../../model/DAO/ClientManagement.php';
+include_once '../../model/DAO/DirectionsManagement.php';
 include_once '../../model/transferObject/Client.php';
 
 $error = '';
@@ -27,6 +28,17 @@ if (isset($_SESSION['client'])) {
       $error = 'Este usuario ya existente';
     }
   } else {
+<<<<<<< HEAD
+=======
+    $locationDao = new DirectionsManagement();
+    if(isset($_GET['country'])){
+      $cities = $locationDao -> getCitiesByCountry($_GET['country']);
+      echo json_encode(array('cities'=>$cities,'success'=>true));
+      return;
+    } else {
+      $countries = $locationDao -> getCountries();
+    }
+>>>>>>> develop
   }
 }
 require_once '../../views/client/sign_up.php';

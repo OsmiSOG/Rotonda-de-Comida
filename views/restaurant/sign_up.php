@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Sign up</title>
     <link rel="stylesheet" href="../../views/css/style.css">
+    <script type="text/javascript" src="../../views/js/jquery-3.4.1.min.js" charset="utf-8"></script>
   </head>
   <body>
     <header>
@@ -26,35 +27,39 @@
       </div>
       <div class="input-form">
         <p>Localizacion</p>
-        <label for="">Pais</label>
-        <select class="" name="country">
+        <label for="country">Pais</label>
+        <select class="" name="country" id="country">
           <option disabled selected>Escoje tu pais</option>
           <?php for ($i=0; $i <count($countries) ; $i++): ?>
             <option value=<?php echo $countries[$i]['idPais']; ?>><?php echo $countries[$i]['pais']; ?></option>
           <?php endfor; ?>
         </select>
-        <label for="">Ciudad</label>
-        <select class="" name="city">
+        <label for="city">Ciudad</label>
+        <select class="" name="city" id="city">
           <?php if(empty($cities)): ?>
             <option disabled selected>Escoje tu pais</option>
           <?php endif; ?>
         </select>
-        <label for="">Direccion</label>
+        <label for="nomenclature">Direccion</label>
         <input type="text" name="nomenclature" value="">
       </div>
       <div class="input-form">
-        <label for="">Especialidad</label>
+        <label for="specialty">Especialidad</label>
         <select class="" name="specialty">
-
+          <option disabled selected>Escoje la especialidad</option>
+          <?php for ($i=0; $i < count($specialties); $i++): ?>
+            <option value=<?php echo $specialties[$i]['idEspecialidades'] ?>><?php echo $specialties[$i]['nombre'] ?></option>
+          <?php endfor; ?>
         </select>
       </div>
       <div class="input-form">
-        <label for="">Password</label>
-        <input type="password" name="" value="">
+        <label for="password">Password</label>
+        <input type="password" name="password" value="">
       </div>
       <div class="input-form">
         <button class="botones" type="submit" name="button">Sign up</button>
       </div>
     </form>
+    <script src="../../views/js/cities.js" charset="utf-8"></script>
   </body>
 </html>

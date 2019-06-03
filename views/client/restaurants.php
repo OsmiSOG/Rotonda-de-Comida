@@ -13,7 +13,7 @@
           <li> <a href="add_direction.php">add direction</a> </li>
           <li> <a href="orders.php">orders</a> </li>
           <li> <a href="shopping_cart.php">shopping cart</a> </li>
-          <li> <a href="../close_session">sign out</a> </li>
+          <li> <a href="../close_session.php">sign out</a> </li>
         </ul>
       </nav>
     </header>
