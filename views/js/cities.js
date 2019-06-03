@@ -1,5 +1,4 @@
 let country = document.getElementById('country')
-
 country.onchange = () => {
   let choose = country.value
   $.ajax({

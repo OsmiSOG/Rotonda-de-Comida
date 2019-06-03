@@ -7,12 +7,11 @@ include_once '../../model/DAO/RestaurantManagement,php';
 include_once '../../model/DAO/ProductManagement.php';
 include_once '../../model/transferObject/Restaurant.php';
 $menus = array();
-if (isset($_SESSION['home'])) {
+if (isset($_SESSION['restaurant'])) {
 $menuDAO = new MenuManagement();
 $menus = $menuDAO -> getRestaurantMenus();
 } else  {
   header('location: ../index.php');
 }
-
 require_once '../../views/restaurant/home.php';
 ?>
