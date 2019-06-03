@@ -8,8 +8,7 @@ include_once ''; // incluir dao
 if (isset($_SESSION['client'])) {
   // code...
 } else  {
-  // code...
-  header('location: ../inicio.php');
+  header('location: ../index.php');
 }
 
 require_once '../../views/client/restaurants.php';

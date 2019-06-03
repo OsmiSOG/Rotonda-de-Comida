@@ -6,7 +6,7 @@ if (isset($_SESSION['restaurant'])) {
   // code...
 } else  {
   // code...
-  header('location: ../inicio.php');
+  header('location: ../index.php');
 }
 
 require_once '../../views/restaurant/add_menu.php';
