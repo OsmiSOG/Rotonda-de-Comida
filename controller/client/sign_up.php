@@ -27,10 +27,6 @@ if (isset($_SESSION['client'])) {
       $error = 'Este usuario ya existente';
     }
   } else {
-<<<<<<< HEAD
-=======
-
->>>>>>> develop
   }
 }
 require_once '../../views/client/sign_up.php';

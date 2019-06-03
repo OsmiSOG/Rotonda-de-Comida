@@ -21,7 +21,25 @@
       <div class="">
         <h2 class="titulo-h1">List of menus</h2>
       </div>
-      <!--divs menus obtenidos de la base de datos -->
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Codigo</th>
+            <th scope="col">Precio</th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php for ($i=0; $i < count($menus); $i++) {?>
+            <tr>
+              <th scope="row"><?php echo $i ?></th>
+              <td><?php echo $menus[$i] ->getName() ?></td>
+              <td><?php echo $menus[$i] ->getIdMenu() ?></td>
+              <td><?php echo $menus[$i] ->getPrice() ?></td>
+            </tr>
+          <?php } ?>
+        </tbody>
+      </table>
     </div>
   </body>
 </html>

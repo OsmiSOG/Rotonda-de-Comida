@@ -62,6 +62,7 @@ class MenuManagement implements interfacesMenu
   {
     // code...
   }
+
 }
 
 ?>
