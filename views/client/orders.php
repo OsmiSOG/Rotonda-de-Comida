@@ -16,6 +16,10 @@
           <li> <a href="../close_session.php">sign out</a></li>
         </ul>
       </nav>
+
     </header>
+    <div class="content-body">
+      <h1 id="title-body">Orders</h1>
+    </div>
   </body>
 </html>
