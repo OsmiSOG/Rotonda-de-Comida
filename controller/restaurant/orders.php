@@ -4,11 +4,9 @@ error_reporting(-1);
 
 session_start();
 include_once ''; // incluir dao
-
-$orders= array();
+  // code...
 if (isset($_SESSION['restaurant'])) {
- $orderDAO = new OrderManagement();
- $orders = $orderDAO -> selectOrdersByRestaurant();
+
   header('location: ../index.php');
 } else  {
   // code...

@@ -21,5 +21,26 @@
     <div class="content-body">
       <h1 id="title-body">Orders</h1>
     </div>
+    <div class="">
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Codigo</th>
+            <th scope="col">Precio</th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php for ($i=0; $i < count($menus); $i++) {?>
+            <tr>
+              <th scope="row"><?php echo $i ?></th>
+              <td><?php echo $menus[$i] ->getName() ?></td>
+              <td><?php echo $menus[$i] ->getIdMenu() ?></td>
+              <td><?php echo $menus[$i] ->getPrice() ?></td>
+            </tr>
+          <?php } ?>
+        </tbody>
+      </table>
+    </div>
   </body>
 </html>

@@ -28,8 +28,6 @@ if (isset($_SESSION['client'])) {
       $error = 'Este usuario ya existente';
     }
   } else {
-<<<<<<< HEAD
-=======
     $locationDao = new DirectionsManagement();
     if(isset($_GET['country'])){
       $cities = $locationDao -> getCitiesByCountry($_GET['country']);
@@ -38,7 +36,6 @@ if (isset($_SESSION['client'])) {
     } else {
       $countries = $locationDao -> getCountries();
     }
->>>>>>> develop
   }
 }
 require_once '../../views/client/sign_up.php';
