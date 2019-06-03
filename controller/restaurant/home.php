@@ -1,11 +1,16 @@
 <?php
 session_start();
-include_once ''; // incluir dao
-
+include_once '../../model/DAO/MenuManagement.php';
+include_once '../../model/transferObject/Menu.php';
+include_once '../../model/transferObject/Product.php';
+include_once '../../model/DAO/RestaurantManagement,php';
+include_once '../../model/DAO/ProductManagement.php';
+include_once '../../model/transferObject/Restaurant.php';
+$menus = array();
 if (isset($_SESSION['home'])) {
-  // code...
+$menuDAO = new MenuManagement();
+$menus = $menuDAO -> getRestaurantMenus();
 } else  {
-  // code...
   header('location: ../index.php');
 }
 

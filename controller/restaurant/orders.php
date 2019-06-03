@@ -5,8 +5,10 @@ error_reporting(-1);
 session_start();
 include_once ''; // incluir dao
 
+$orders= array();
 if (isset($_SESSION['restaurant'])) {
-  // code...
+ $orderDAO = new OrderManagement();
+ $orders = $orderDAO -> selectOrdersByRestaurant();
   header('location: ../index.php');
 } else  {
   // code...

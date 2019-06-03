@@ -58,6 +58,7 @@ class ingredientManagement implements InterfaceIngredient
       ':cantidad' => $ingredient -> getQuantity(),
       ':modificable' => $ingredient -> getModifiable()
     ));
+
     // $idIngredient = $dataBase -> executeQuery(SELECT MAX(idIngrediente) AS lastId FROM Ingredientes);
     $idIngredient = $dataBase -> connect() -> lastInsertId();
     $sql = 'INSERT INTO IngredientesPorProductos (idProducto, idIngrediente) VALUES (:idProducto, :idIngrediente)';
