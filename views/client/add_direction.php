@@ -10,9 +10,10 @@
       <h1 id="title-header">Virtual roundabout</h1>
       <nav>
         <ul>
-          <li></li>
-          <li> <a href="#">Shopping cart</a></li>
-          <li> <a href="#">sign out</a></li>
+          <li> <a href="restaurants.php">restaurants</a> </li>
+          <li> <a href="orders.php">orders</a> </li>
+          <li> <a href="shopping_cart.php">Shopping cart</a></li>
+          <li> <a href="../close_session.php">sign out</a></li>
         </ul>
       </nav>
     </header>

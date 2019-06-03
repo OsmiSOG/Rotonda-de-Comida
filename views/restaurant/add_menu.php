@@ -9,8 +9,9 @@
     <header>
       <nav>
         <ul>
-          <li> <a href="#">Home</a> </li>
-          <li> <a href="#">sign out</a> </li>
+          <li> <a href="home.php">Home</a> </li>
+          <li> <a href="orders.php">Orders</a> </li>
+          <li> <a href="../close_session">sign out</a> </li>
         </ul>
       </nav>
     </header>

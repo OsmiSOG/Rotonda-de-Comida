@@ -10,9 +10,10 @@
       <h1 id="title-header">Roundabout restaurant</h1>
       <nav>
         <ul>
-          <li></li>
-          <li> <a href="#">add direction</a> </li>
-          <li> <a href="#">sign out</a> </li>
+          <li> <a href="restaurants.php">restaurants</a> </li>
+          <li> <a href="add_direction.php">add direction</a> </li>
+          <li> <a href="orders.php">orders</a> </li>
+          <li> <a href="close_session.php">sign out</a> </li>
         </ul>
       </nav>
     </header>
