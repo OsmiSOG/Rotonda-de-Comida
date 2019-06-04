@@ -4,9 +4,11 @@
    */
   interface InterfaceProduct
   {
-    public function insertProductToMenu($product, $idCategory, $idMenu);
+    public function insertProduct($product='', $idCategory);
+    public function insertProductToMenu($product, $idMenu);
     public function getProductsByMenu($idMenu);
     public function deleteProduct($idProduct);
+    public function getCategories();
     // public function getProductsByRestaurant($idRestaurant);
   }
 

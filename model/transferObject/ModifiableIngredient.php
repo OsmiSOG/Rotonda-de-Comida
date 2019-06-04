@@ -29,7 +29,7 @@ class ModifiableIngredient
   {
     $this->modification=$modification;
   }
-  public function getName($name)
+  public function getName()
   {
     return $this->name;
   }

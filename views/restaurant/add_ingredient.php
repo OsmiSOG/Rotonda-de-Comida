@@ -11,7 +11,7 @@
       <h1 id="title-header">Virtual roundabout</h1>
       <nav>
         <ul>
-          <li> <a href="add_menu.php">Regresa</a> </li>
+          <li> <a href="add_product.php">Regresa</a> </li>
         </ul>
       </nav>
     </header>
@@ -19,14 +19,17 @@
       <div class="title-body">
         <h1 class="titulos-res">Add new Ingredient</h1>
       </div>
+      <?php if (!empty($info)): ?>
+        <h5 style="background-color: rgb(139, 255, 252);"><?php echo $info ?></h5>
+      <?php endif; ?>
       <form class="form" action=<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?> method="post">
         <div class="input-form">
           <label for="">Nombre</label>
-          <input type="text" name="name" value="">
+          <input type="text" name="name" value="" required>
         </div>
         <div class="input-form">
           <label for="">Cantidad</label>
-          <input type="number" name="quantity" value="">
+          <input type="number" name="quantity" value="" required>
         </div>
         <p>Modificable: </p>
         <div>
@@ -35,7 +38,7 @@
         </div>
 
         <div>
-          <input type="radio" name="modifiable" value="no">
+          <input type="radio" name="modifiable" value="no" checked>
           <label for="dewey">No</label>
         </div>
         <div class="modifiable-form">

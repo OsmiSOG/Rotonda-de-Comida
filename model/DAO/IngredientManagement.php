@@ -49,7 +49,17 @@ class ingredientManagement implements InterfaceIngredient
     }
     return $result;
   }
-  public function insertIngredientToProduct($ingredient, $idProduct)
+  public function insertIngredientToProduct($idIngredient, $idProduct)
+  {
+    $dataBase = new ConnectionDB();
+    $sql = 'INSERT INTO IngredientesPorProductos (idProducto, idIngrediente) VALUES (:idProducto, :idIngrediente)';
+    $result = $dataBase -> executeInsert($sql, array(
+      ':idProducto' => $idProduct,
+      ':idIngrediente'=> $idIngredient
+    ));
+    return $result;
+  }
+  public function insertIngredient($ingredient)
   {
     $dataBase = new ConnectionDB();
     $sql = 'INSERT INTO Ingredientes (idIngrediente, nombre, cantidad, modificable) VALUES (null, :nombre, :cantidad, :modificable)';
@@ -58,17 +68,14 @@ class ingredientManagement implements InterfaceIngredient
       ':cantidad' => $ingredient -> getQuantity(),
       ':modificable' => $ingredient -> getModifiable()
     ));
-
-    // $idIngredient = $dataBase -> executeQuery(SELECT MAX(idIngrediente) AS lastId FROM Ingredientes);
-    $idIngredient = $dataBase -> connect() -> lastInsertId();
-    $sql = 'INSERT INTO IngredientesPorProductos (idProducto, idIngrediente) VALUES (:idProducto, :idIngrediente)';
-    $result2 = $dataBase -> executeInsert($sql, array(
-      ':idProducto' => $idProduct,
-      ':idIngrediente'=> $idIngredient
-    ));
-    return ($result && $result2);
+    return $result;
   }
-
+  public function getLastIdIngredient()
+  {
+    $dataBase = new ConnectionDB();
+    $idIngredient = $dataBase -> executeQuery('SELECT MAX(idIngrediente) AS lastId FROM Ingredientes');
+    return $idIngredient[0]['lastId'];
+  }
 }
 
  ?>

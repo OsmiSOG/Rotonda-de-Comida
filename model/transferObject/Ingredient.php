@@ -38,7 +38,7 @@ class Ingredient
   }
   public function getQuantity()
   {
-    return $this->cuantity;
+    return $this->quantity;
   }
   public function setQuantity($quantity)
   {

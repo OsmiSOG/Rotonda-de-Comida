@@ -1,16 +1,20 @@
 <?php
 
-require_once $_SERVER['DOCUMENT_ROOT'].'rotonda-de-comida/model/dataSource/Connection.php';
-require_once $_SERVER['DOCUMENT_ROOT'].'rotonda-de-comida/model/interfaces/InterfaceModifiableIngredient.php';
-require_once $_SERVER['DOCUMENT_ROOT'].'rotonda-de-comida/model/transferObject/ModifiableIngredient.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/Rotonda-de-Comida/model/dataSource/Connection.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/Rotonda-de-Comida/model/interfaces/InterfaceModifiableIngredient.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/Rotonda-de-Comida/model/transferObject/ModifiableIngredient.php';
 
 
-class ModifiableIngredient implements InterfaceModifiableIngredient
+class ModifiableManagement implements InterfaceModifiableIngredient
 {
-	public function insertModifiableIngredientToMenu($modifiableIngredient){
+	public function insertModifiableIngredientToIngredient($modifiableIngredient, $idIngredient){
 		$dataBase = new ConnectionDB();
-    $sql = '';
-    $result = $dataBase -> executeInsert($sql);
+    $sql = 'INSERT INTO Modificables (idModificables, type, ingrediente, idIngrediente) VALUES (null, :type, :ingrediente, :idIngrediente)';
+    $result = $dataBase -> executeInsert($sql, array(
+			':type'=>$modifiableIngredient->getModification(),
+			':ingrediente'=>$modifiableIngredient->getName(),
+			':idIngrediente'=>$idIngredient
+		));
 
     return $result;
 	}
@@ -29,7 +33,7 @@ class ModifiableIngredient implements InterfaceModifiableIngredient
 
     return $result;
 	}
-	public function getModifiableIngredientsByIngredient($idIngredient){
+	public function getModifiableIngredientByIngredient($idIngredient){
 		$dataBase = new ConnectionDB();
     $sql = 'SELECT * FROM Modificables WHERE idIngrediente = :idIngrediente';
     $result = $dataBase -> executeQuery($sql, array(':idIngrediente'=>$idIngredient));
@@ -46,5 +50,5 @@ class ModifiableIngredient implements InterfaceModifiableIngredient
 		}
     return $modifiableIngredients;
 	}
-
+}
 ?>

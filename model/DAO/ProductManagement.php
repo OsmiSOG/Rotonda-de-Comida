@@ -27,26 +27,39 @@
           $product -> setcategory($result[$i]['categoria']);
           array_push($products, $product);
         }
-
       }
+      return $products;
     }
-    public function insertProductToMenu($product='', $idCategory, $idMenu)
+    public function getCategories()
     {
       $dataBase = new ConnectionDB();
-      $sql = 'INSERT INTO Productos (idProducto, nombre, precio, idCategoria) VALUES (null, :precio, :nombre, :idCategoria)';
+      $sql = 'SELECT * FROM Categorias';
+      $result = $dataBase -> executeQuery($sql);
+      $categories = null;
+      if ($result != false) {
+        $categories = $result;
+      }
+      return $categories;
+    }
+    public function insertProduct($product, $idCategory)
+    {
+      $dataBase = new ConnectionDB();
+      $sql = 'INSERT INTO Productos (idProducto, nombre, precio, idCategoria) VALUES (null, :nombre, :precio, :idCategoria)';
       $result = $dataBase -> executeInsert($sql, array(
         ':nombre' => $product -> getName(),
         ':precio' => $product -> getPrice(),
         ':idCategoria' => $idCategory
       ));
-      // $idIngredient = $dataBase -> executeQuery(SELECT MAX(idIngrediente) AS lastId FROM Ingredientes);
-      $idProduct = $dataBase -> connect() -> lastInsertId();
+      return $result;
+    }
+    public function insertProductToMenu($idProduct='', $idMenu){
+      $dataBase = new ConnectionDB();
       $sql = 'INSERT INTO MenusPorProductos (idMenu, idProducto) VALUES (:idMenu, :idProduct)';
-      $result2 = $dataBase -> executeInsert($sql, array(
+      $result = $dataBase -> executeInsert($sql, array(
         ':idMenu' => $idMenu,
         ':idProduct'=> $idProduct
       ));
-      return ($result && $result2);
+      return $result;
     }
     public function deleteProduct($idProduct='')
     {
@@ -55,6 +68,27 @@
       $result = $dataBase -> executeDelete($sql);
 
       return $result;
+    }
+    public function getLastIdProduct()
+    {
+      $dataBase = new ConnectionDB();
+      $idProduct = $dataBase -> executeQuery('SELECT MAX(idProducto) AS lastId FROM Productos');
+      return $idProduct[0]['lastId'];
+    }
+
+    public function getProductsByCategories($value='')
+    {
+      $entrada = array();
+      $platoFuerte = array();
+      $bebida = array();
+      $postre = array();
+      $acompañamiento = array();
+      $categories = array('entrada'=>$entrada,
+      'platoFuerte'=>$platoFuerte,
+      'bebida'=>$bebida,
+      'postre'=>$postre,
+      'acompañamiento'=>$acompañamiento);
+      return $categories;
     }
   }
 
