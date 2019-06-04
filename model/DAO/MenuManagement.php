@@ -58,10 +58,11 @@ class MenuManagement implements InterfaceMenu
     }
     return $menu;
   }
-  public function deleteMenu($idMenu)
-  {
-    // code...
-  }
+  // public function deleteMenu($idMenu)
+  // {
+  //   // code...
+  // }
+
 }
 
 ?>

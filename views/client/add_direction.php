@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Add direction</title>
     <link rel="stylesheet" href="../../views/css/style.css">
+    <script type="text/javascript" src="../../views/js/jquery-3.4.1.min.js" charset="utf-8"></script>
   </head>
   <body>
     <header>
@@ -31,7 +32,7 @@
         <input type="text" name="" value="">
         <button class="botones" type="submit" name="button">agregar</button>
       </form>
-
+      <script src="../../views/js/cities.js" charset="utf-8"></script>
     </div>
   </body>
 </html>

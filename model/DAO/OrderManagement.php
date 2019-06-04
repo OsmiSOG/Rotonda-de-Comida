@@ -11,19 +11,38 @@ class OrderManagement implements InterfaceOrder
 	    public function insertOrder($order='')
 	    {
 				$dataBase = new ConnectionDB();
-		    $sql = '';
-		    $result = $dataBase -> executeInsert($sql);
-
+		    $sql = 'INSERT INTO pedidos (idPedido,horaPedido, informacionPedido,estado,  idCliente, NIT)
+				 VALUES ( null,:horaPedido, :informacionPedido,:estado, :idCliente, :NIT)';
+		    $result = $dataBase -> executeInsert($sql, array(
+					':horaPedido' => $order -> getHourOrder(),
+					':informacionPedido' => $order -> getInfoOrder(),
+					':estado' => $order -> getState(),
+					':idCliente' => $order -> getclient(),
+					':NIT' => $order -> getNit()
+				));
 		    return $result;
 	    }
 
 			public function getOrdersByClient($idClient='')
 	    {
 				$dataBase = new ConnectionDB();
-		    $sql = '';
-		    $result = $dataBase -> executeQuery($sql);
-
-		    return $result;
+		    $sql = 'SELECT * FROM pedidos WHERE idCliente=:idCliente';
+		    $result = $dataBase -> executeQuery($sql, array(
+					':idCliente' => $idClient
+				));
+				$order = null;
+				if ($result != false) {
+					$order = new Order();
+					for ($i=0; $i <count($result) ; $i++) {
+						$order -> setIdOrder($result[$i]['idPedido']);
+						$order -> setHourOrder($result[$i]['horaPedido']);
+						$order -> setInfoOrder($result[$i]['informacionPedido']);
+						$order -> setState($result[$i]['estado']);
+						$order -> setCedula($result[$i]['idCliente']);
+						$order -> setNit($result[$i]['NIT']);
+					}
+				}
+		    return $order;
 	    }
 			public function getLastOrderByRestaurant($idRestaurant='')
 			{
