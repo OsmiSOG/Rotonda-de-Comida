@@ -76,13 +76,16 @@
       return $idProduct[0]['lastId'];
     }
 
-    public function getProductsByCategories($value='')
+    public function getProductsByCategories()
     {
-      $entrada = array();
-      $platoFuerte = array();
-      $bebida = array();
-      $postre = array();
-      $acompañamiento = array();
+      $dataBase = new ConnectionDB();
+      $sql = 'SELECT * FROM Productos WHERE idCategoria = :idCategoria';
+      $entrada = $dataBase -> executeQuery($sql, array(':idCategoria'=>1));
+      $platoFuerte = $dataBase -> executeQuery($sql, array(':idCategoria'=>2));
+      $bebida = $dataBase -> executeQuery($sql, array(':idCategoria'=>4));
+      $postre = $dataBase -> executeQuery($sql, array(':idCategoria'=>3));
+      $acompañamiento = $dataBase -> executeQuery($sql, array(':idCategoria'=>5));
+
       $categories = array('entrada'=>$entrada,
       'platoFuerte'=>$platoFuerte,
       'bebida'=>$bebida,

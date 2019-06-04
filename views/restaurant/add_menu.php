@@ -20,36 +20,49 @@
       <div class="title-body">
         <h1 class="titulos-res">Add new menu</h1>
       </div>
+      <?php if (!empty($info)): ?>
+        <h5 style="background-color: rgb(139, 255, 252);"><?php echo $info ?></h5>
+      <?php endif; ?>
       <form class="form" action=<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?> method="post">
         <div class="input-form">
           <label for="">Nombre</label>
-          <input type="text" name="" value="" required>
+          <input type="text" name="name" value="" required>
         </div>
         <div class="input-form">
           <label for="">Precio</label>
-          <input type="number" name="" value="" required>
+          <input type="number" name="price" value="" required>
         </div>
         <div class="input-form">
           <p style="font-weight: bold;">productos</p>
           <label for="">Entrada</label>
-          <select class="escoger" name="" required>
-
+          <select class="escoger" name="entrada" required>
+            <?php for ($i=0; $i < count($categories['entrada']); $i++): ?>
+              <option value=<?php echo $categories['entrada'][$i]['idProducto'] ?>><?php echo $categories['entrada'][$i]['nombre'] ?></option>
+            <?php endfor; ?>
           </select> <br>
           <label for="">Plato Fuerte</label>
-          <select class="escoger" name="">
-
+          <select class="escoger" name="platoFuerte">
+            <?php for ($i=0; $i < count($categories['platoFuerte']); $i++): ?>
+              <option value=<?php echo $categories['platoFuerte'][$i]['idProducto'] ?>><?php echo $categories['platoFuerte'][$i]['nombre'] ?></option>
+            <?php endfor; ?>
           </select> <br>
           <label for="">Bebida</label>
-          <select class="escoger" name="">
-
+          <select class="escoger" name="bebida">
+            <?php for ($i=0; $i < count($categories['bebida']); $i++): ?>
+              <option value=<?php echo $categories['bebida'][$i]['idProducto'] ?>><?php echo $categories['entrada'][$i]['nombre'] ?></option>
+            <?php endfor; ?>
           </select> <br>
           <label for="">Postre</label>
-          <select class="escoger" name="">
-
+          <select class="escoger" name="postre">
+            <?php for ($i=0; $i < count($categories['postre']); $i++): ?>
+              <option value=<?php echo $categories['postre'][$i]['idProducto'] ?>><?php echo $categories['entrada'][$i]['nombre'] ?></option>
+            <?php endfor; ?>
           </select> <br>
           <label for="">Acompañamiento</label>
-          <select class="escoger" name="">
-
+          <select class="escoger" name="acompañamiento">
+            <?php for ($i=0; $i < count($categories['acompañamiento']); $i++): ?>
+              <option value=<?php echo $categories['acompañamiento'][$i]['idProducto'] ?>><?php echo $categories['acompañamiento'][$i]['nombre'] ?></option>
+            <?php endfor; ?>
           </select> <br>
         </div>
         <div class="">

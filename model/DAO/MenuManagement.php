@@ -32,8 +32,8 @@ class MenuManagement implements InterfaceMenu
     $dataBase = new ConnectionDB();
     $sql = 'INSERT INTO Menus (idMenu, precio, nombre) VALUES (null, :precio, :nombre)';
     $result = $dataBase -> executeInsert($sql, array(
-      ':precio' => $ingredient -> getQuantity(),
-      ':nombre' => $ingredient -> getName()
+      ':precio' => $menu -> getPrice(),
+      ':nombre' => $menu -> getName()
     ));
     // $idIngredient = $dataBase -> executeQuery(SELECT MAX(idIngrediente) AS lastId FROM Ingredientes);
     $idMenu = $dataBase -> connect() -> lastInsertId();
@@ -58,10 +58,12 @@ class MenuManagement implements InterfaceMenu
     }
     return $menu;
   }
-  // public function deleteMenu($idMenu)
-  // {
-  //   // code...
-  // }
+  public function getLastIdMenu()
+  {
+    $dataBase = new ConnectionDB();
+    $idMenu = $dataBase -> executeQuery('SELECT MAX(idMenu) AS lastId FROM Menus');
+    return $idMenu[0]['lastId'];
+  }
 
 }
 
