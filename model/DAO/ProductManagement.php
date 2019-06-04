@@ -75,6 +75,21 @@
       $idProduct = $dataBase -> executeQuery('SELECT MAX(idProducto) AS lastId FROM Productos');
       return $idProduct[0]['lastId'];
     }
+
+    public function getProductsByCategories($value='')
+    {
+      $entrada = array();
+      $platoFuerte = array();
+      $bebida = array();
+      $postre = array();
+      $acompañamiento = array();
+      $categories = array('entrada'=>$entrada,
+      'platoFuerte'=>$platoFuerte,
+      'bebida'=>$bebida,
+      'postre'=>$postre,
+      'acompañamiento'=>$acompañamiento);
+      return $categories;
+    }
   }
 
 ?>
