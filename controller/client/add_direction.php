@@ -1,8 +1,8 @@
 <?php
 
 session_start();
-include_once ''; // incluir dao
-
+include_once '../../model/DAO/ClientManagement.php'; // incluir dao
+include_once '../../model';
 if (isset($_SESSION['client'])) {
   // code...
 } else  {

@@ -1,5 +1,7 @@
 <?php
   require_once '../Connection.php';
+  include_once 'DirectionsManagement.php';
+  include_once '../transferObject/Client.php';
   /**
    *
    */
@@ -180,6 +182,28 @@
     public function getOrder($value='')
     {
       // code...
+    }
+    public function InsertNewDirection($cellPhone='')
+    {
+      // code...
+      $sql = '';
+      if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        $client =  new Client();
+        if ($clientDAO -> getClientByIdentification($_POST['identification']) == null) {
+          $error = 'El usuario no existente';
+        }else {
+          $client -> setDirection(array($_POST['country'], $_POST['city'], $_POST['nomenclature']));
+        }
+      }else{
+        $locationDao = new DirectionsManagement();
+        if(isset($_GET['country'])){
+          $cities = $locationDao -> getCitiesByCountry($_GET['country']);
+          echo json_encode(array('cities'=>$cities,'success'=>true));
+          return;
+        } else {
+          $countries = $locationDao -> getCountries();
+        }
+      }
     }
   }
 
