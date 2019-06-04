@@ -1,5 +1,6 @@
 var modifiableRadio = document.getElementsByName('modifiable')
 var modifiableForm = document.getElementsByClassName('modifiable-form')
+var count = 0;
 for (var i=0; i<modifiableRadio.length; i++) {
   modifiableRadio[i].addEventListener('change', function(e) {
     if (this.value === 'yes') {
@@ -31,11 +32,10 @@ for (var i=0; i<modifiableRadio.length; i++) {
             url: 'add_ingredient.php',
             type: 'GET',
             success: function (res) {
-              alert(res)
               let jsonRes = JSON.parse(res)
               if (jsonRes.success) {
                 let replacement = document.createElement('select')
-                replacement.name = 'replacement:'
+                replacement.name = 'replacement'
                 let textReplacement = document.createElement('label');
                 textReplacement.innerHTML = 'Por cual ingrediente desea que sea remplazado'
                 for (var i = 0; i < jsonRes.ingredients.length; i++) {
@@ -49,6 +49,17 @@ for (var i=0; i<modifiableRadio.length; i++) {
               }
             }
           })
+        } else {
+          childrens = modifiableForm[0].childNodes
+          if (count === 0) {
+            modifiableForm[0].removeChild(childrens[0])
+            count++
+          }
+          if (childrens.length > 1) {
+              alert(childrens.length)
+            modifiableForm[0].removeChild(childrens[1])
+            modifiableForm[0].removeChild(childrens[1])
+          }
         }
       }
     }else{
