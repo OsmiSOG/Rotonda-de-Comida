@@ -22,6 +22,36 @@
         <h2 class="titulo-h1">Detail of the menu</h2>
       </div>
       <div class="">
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">Codigo</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Precio</th>
+              <th scope="col">Productos</th>
+            </tr>
+          </thead>
+          <tbody>
+            <?php for ($i=0; $i < count($menu); $i++) {?>
+              <tr>
+                <th scope="row"><?php echo $i ?></th>
+                <td><?php echo $menu[$i] ->getIdMenu() ?></td>
+                <td><?php echo $menu[$i] ->getName() ?></td>
+                <td><?php echo $menu[$i] ->getPrice() ?></td>
+                <td><ul><?php for ($i=0; $i <count($products) ; $i++) {?>
+                    <li><?php $products[$i]-> getName() ?></li>
+                  <?php } ?>
+                </ul>
+                </td>
+              </tr>
+            <?php } ?>
+          </tbody>
+        </table>
+        <form class="" action=<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?> method="post">
+          <?php  ?>
+          <input type="hidden" name="menu" value="<?php echo $menu[$i] -> getIdMenu() ?>">
+          <button type="submit" name="button">add shoping cart</button>
+        </form>
       </div>
     </div>
   </body>

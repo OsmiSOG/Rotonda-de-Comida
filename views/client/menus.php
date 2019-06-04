@@ -37,6 +37,13 @@
               <td><?php echo $menus[$i] ->getName() ?></td>
               <td><?php echo $menus[$i] ->getIdMenu() ?></td>
               <td><?php echo $menus[$i] ->getPrice() ?></td>
+              <td><form class="" action="index.html" method="post">
+                <form class="" action=<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?> method="post">
+                </form>
+                <input type="hidden" name="" value=<?php  echo $menus[$i] ->getIdMenu() ?>>
+                <button type="submit" name="button">see menu</button>
+                  <button type="submit" name="button">add shoping cart </button>
+              </form></td>
             </tr>
           <?php } ?>
         </tbody>

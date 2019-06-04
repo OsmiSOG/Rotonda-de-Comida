@@ -28,15 +28,16 @@
             <th scope="col">Nombre</th>
             <th scope="col">Codigo</th>
             <th scope="col">Precio</th>
+            
           </tr>
         </thead>
         <tbody>
-          <?php for ($i=0; $i < count($menus); $i++) {?>
+          <?php for ($i=0; $i < count($orders); $i++) {?>
             <tr>
               <th scope="row"><?php echo $i ?></th>
-              <td><?php echo $menus[$i] ->getName() ?></td>
-              <td><?php echo $menus[$i] ->getIdMenu() ?></td>
-              <td><?php echo $menus[$i] ->getPrice() ?></td>
+              <td><?php echo $orders[$i] ->getName() ?></td>
+              <td><?php echo $orders[$i] ->getIdMenu() ?></td>
+              <td><?php echo $orders[$i] ->getPrice() ?></td>
             </tr>
           <?php } ?>
         </tbody>

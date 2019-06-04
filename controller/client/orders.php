@@ -8,14 +8,18 @@ include_once '../../model/transferObject/Product.php';
 include_once '../../model/DAO/RestaurantManagement.php';
 include_once '../../model/DAO/ProductManagement.php';
 include_once '../../model/transferObject/Restaurant.php';
+
 $orders= array();
 if (isset($_SESSION['client'])) {
-  $menuDAO = new MenuManagement();
-  $restaurant = new Restaurant();
-  $menus = $menuDAO -> getRestaurantMenus($idrestaurant);
-} else  {
-  // code...
-  header('location: ../index.php');
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+      $idClient =$_POST['$idClient'];
+      $menuDAO = new MenuManagement();
+      $restaurantDAO = new RestaurantManagement();
+      $ordersDAO= new OrderManagement();
+      $orders = $orderDAO -> getOrdersByClient($idClient);
+  }
+  }else  {
+    header('location: ../index.php');
 }
 require_once '../../views/client/orders.php';
 ?>
