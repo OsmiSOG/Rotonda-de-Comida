@@ -4,7 +4,7 @@
  */
 class Product
 {
-  private $name
+  private $name;
   private $price;
   private $idProduct;
   private $category;
