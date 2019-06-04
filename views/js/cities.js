@@ -1,9 +1,21 @@
 let country = document.getElementById('country')
+let source = document.getElementsByTagName('title')
+let paths = {
+  sign : 'sign_up.php',
+  direction : 'add_direction.php'
+}
 country.onchange = () => {
+  let path
+  if (source[0].innerHTML === 'Add direction') {
+    path = paths.direction
+  }else {
+    path = paths.sign
+  }
+
   let choose = country.value
   $.ajax({
     data: {country:choose},
-    url: 'sign_up.php',
+    url: path,
     type: 'GET',
     success: function (res) {
       let jsonRes = JSON.parse(res)

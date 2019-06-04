@@ -4,26 +4,27 @@ error_reporting(-1);
 
 session_start();
 include_once '../../model/DAO/ClientManagement.php'; // incluir dao
+include_once '../../model/DAO/DirectionsManagement.php';
+include_once '../../model/transferObject/Client.php';
 
-
+$countries = '';
+$cities = '';
 if (isset($_SESSION['client'])) {
+  $locationDao = new DirectionsManagement();
   if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $client =  new Client();
-    if ($clientDAO -> getClientByIdentification($_POST['identification']) == null) {
-      $error = 'El usuario no existente';
-    }else {
-      $client -> setDirection(array($_POST['country'], $_POST['city'], $_POST['nomenclature']));
-    }
+    $clientDAO = new ClientManagement();
+    $client = $clientDAO -> getClientByNumberPhone($_SESSION['client']);
+    $client -> setDirection(array($_POST['country'], $_POST['city'], $_POST['nomenclature']));
+    $clientDAO -> insertNewDirection($client);
   }else{
-    $locationDao = new DirectionsManagement();
     if(isset($_GET['country'])){
       $cities = $locationDao -> getCitiesByCountry($_GET['country']);
       echo json_encode(array('cities'=>$cities,'success'=>true));
       return;
-    } else {
-      $countries = $locationDao -> getCountries();
     }
   }
+  $countries = $locationDao -> getCountries();
 } else  {
   // code...
   header('location: ../index.php');
