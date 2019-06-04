@@ -8,6 +8,7 @@ include_once '../../model/transferObject/Product.php';
 include_once '../../model/DAO/RestaurantManagement,php';
 include_once '../../model/DAO/ProductManagement.php';
 include_once '../../model/transferObject/Restaurant.php';
+
 $menu = array();
 $products = array();
 if (isset($_SESSION['client'])) {
