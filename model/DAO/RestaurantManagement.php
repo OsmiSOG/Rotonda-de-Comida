@@ -19,10 +19,10 @@
         $restaurants = array();
         for ($i=0; $i < count($result) ; $i++) {
           $restaurant = new Restaurant();
-          $restaurant -> setNit();
-          $restaurant -> setName();
+          $restaurant -> setNit($result[$i]['NIT']);
+          $restaurant -> setName($result[$i]['nombre']);
           // $restaurant -> setDirection();
-          $restaurant -> setSpecialty();
+          $restaurant -> setSpecialty($result[$i]['idEspecialidad']);
           array_push($restaurants, $restaurant);
         }
       }

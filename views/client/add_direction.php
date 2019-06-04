@@ -21,15 +21,19 @@
     <div class="input-form">
       <form class="form" action=<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?> method="post">
         <label class="escoger "for="">country</label>
-        <select class="" name="">
-
+        <select id="country" class="" name="country">
+          <?php for ($i=0; $i <count($countries) ; $i++): ?>
+            <option value=<?php echo $countries[$i]['idPais']; ?>><?php echo $countries[$i]['pais']; ?></option>
+          <?php endfor; ?>
         </select>
         <label class="escoger" for="">city</label>
-        <select class="" name="">
-
+        <select id="city" class="" name="city">
+          <?php if(empty($cities)): ?>
+            <option disabled selected>Escoje tu pais</option>
+          <?php endif; ?>
         </select>
         <label for="">direction</label>
-        <input type="text" name="" value="">
+        <input type="text" name="nomenclature" value="">
         <button class="botones" type="submit" name="button">agregar</button>
       </form>
       <script src="../../views/js/cities.js" charset="utf-8"></script>
