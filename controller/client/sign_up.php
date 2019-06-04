@@ -8,6 +8,8 @@ include_once '../../model/DAO/DirectionsManagement.php';
 include_once '../../model/transferObject/Client.php';
 
 $error = '';
+$countries = array();
+$cities = array();
 if (isset($_SESSION['client'])) {
   header('location: restaurants.php');
 } else {
