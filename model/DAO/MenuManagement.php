@@ -1,12 +1,12 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'].'/Rotonda-de-Comida/model/dataSource/Connection.php';
 require_once $_SERVER['DOCUMENT_ROOT'].'/Rotonda-de-Comida/model/interfaces/InterfaceMenu.php';
-require_once $_SERVER['DOCUMENT_ROOT'].'/Rotonda-de-Comida/model/transferObject/menu.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/Rotonda-de-Comida/model/transferObject/Menu.php';
 
 /**
  *
  */
-class MenuManagement implements interfaceMenu
+class MenuManagement implements InterfaceMenu
 {
 
   public function getRestaurantMenus($idRestaurant)
