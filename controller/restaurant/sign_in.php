@@ -17,7 +17,7 @@ if (isset($_SESSION['restaurant'])) {
       $restaurantManagement = new RestaurantManagement();
       $restaurant = $restaurantManagement -> getRestaurantByNit($nit);
       if ($restaurant != null) {
-           if (password_verify ( $password , $restaurantManagement-> getPasswordByNit($nit) )) {
+           if (password_verify($password, $restaurantManagement-> getPasswordByNit($nit))) {
              $_SESSION['restaurant']= $nit;
              header('location: home.php');
 

@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Sign up User</title>
     <link rel="stylesheet" href="../../views/css/style.css">
+    <script type="text/javascript" src="../../views/js/jquery-3.4.1.min.js" charset="utf-8"></script>
   </head>
   <body>
     <header>
@@ -32,10 +33,17 @@
         <label for="">direccion</label>
         <div class="input-form">
           <label for="">pais</label>
-          <select class="select-form" name="country" >
+          <select class="select-form" name="country" id="country" >
+            <option disabled selected>Escoje tu pais</option>
+            <?php for ($i=0; $i <count($countries) ; $i++): ?>
+              <option value=<?php echo $countries[$i]['idPais']; ?>><?php echo $countries[$i]['pais']; ?></option>
+            <?php endfor; ?>
           </select>
           <label for="">ciudad</label>
-          <select class="select-form" name="city" >
+          <select class="select-form" name="city" id="city">
+            <?php if(empty($cities)): ?>
+              <option disabled selected>Escoje tu pais</option>
+            <?php endif; ?>
           </select>
           <label for="">nomenclatura</label>
           <input type="text" name="nomenclature" value="" >
@@ -49,5 +57,6 @@
       <button class="botones" type="submit" name="button">Registrar </button>
       </div>
     </form>
+    <script src="../../views/js/cities.js" charset="utf-8"></script>
   </body>
 </html>

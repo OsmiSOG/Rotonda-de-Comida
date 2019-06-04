@@ -32,11 +32,11 @@
       $sql = 'SELECT * FROM Clientes WHERE celular = :celular';
       $result = $dataBase->executeQuery($sql, array(':celular'=>$numberPhone));
       $client = null;
-      if(!$result){
+      if($result != false){
         $client = new Client();
-        $client -> setIdentification($result['cedula']);
-        $client -> setName($result['Nombre']);
-        $client -> setPhone($result['celular']);
+        $client -> setCedula($result[0]['cedula']);
+        $client -> setName($result[0]['Nombre']);
+        $client -> setCellPhone($result[0]['celular']);
         // $client -> setDirection();
       }
       return $client;
@@ -48,8 +48,8 @@
       $sql = 'SELECT password FROM Clientes WHERE celular = :celular';
       $result = $dataBase -> executeQuery($sql, array(':celular'=>$numberPhone));
       $password = null;
-      if(!$result){
-          $password = $result['password'];
+      if($result != false){
+          $password = $result[0]['password'];
       }
       return $password;
     }
