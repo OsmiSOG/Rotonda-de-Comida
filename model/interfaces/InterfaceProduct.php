@@ -9,6 +9,7 @@
     public function getProductsByMenu($idMenu);
     public function deleteProduct($idProduct);
     public function getCategories();
+    public function getProductsByCategories();
     // public function getProductsByRestaurant($idRestaurant);
   }
 
