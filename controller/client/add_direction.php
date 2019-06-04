@@ -4,7 +4,8 @@ error_reporting(-1);
 
 session_start();
 include_once '../../model/DAO/ClientManagement.php'; // incluir dao
-include_once '../../model';
+
+
 if (isset($_SESSION['client'])) {
   if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $client =  new Client();
