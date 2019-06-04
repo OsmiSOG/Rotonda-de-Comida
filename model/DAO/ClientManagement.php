@@ -68,6 +68,18 @@
       }
       return $client;
     }
+    public function InsertNewDirection($cellPhone='')
+    {
+      // code...
+      $dataBase = new ConnectionDB();
+      $sql = 'INSERT INTO DireccionesCliente (idCiudad, direccion, cedulaCliente) VALUES (:idCiudad, :direccion, :cedulaCliente)';
+      $result = $dataBase->executeInsert($sql, array(
+        ':idCiudad' => $client -> getDirection()[1],
+        ':direccion' => $client -> getDirection()[2],
+        ':cedulaCliente' => $client -> getCedula()
+      ));
+      return $result;
+    }
   }
 
 ?>
