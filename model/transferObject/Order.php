@@ -10,16 +10,16 @@ class Order
   private $hourOrder;
   private $numberOrder;
   private $infoOrder;
-  private $idClient;
   private $state;
+  private $client;
 
-  function __construct($idOrder=null, $hourOrder=null, $numberOrder=null, $infoOrder=null, $idClient=null, $state=null)
+  function __construct($idOrder=null, $hourOrder=null, $numberOrder=null, $infoOrder=null, $client=null, $state=null)
   {
     $this->idOrder=$idOrder;
     $this->hourOrder=$hourOrder;
     $this->numberOrder=$numberOrder;
     $this->infoOrder=$infoOrder;
-    $this->idClient=$idClient;
+    $this->client=$client;
     $this->state=$state;
   }
   public function getIdOrder()
@@ -54,13 +54,13 @@ class Order
   {
     $this->infoOrder=$infoOrder;
   }
-  public function getIdClient()
+  public function getclient()
   {
-    return $this->idClient;
+    return $this->client;
   }
-  public function setIdClient($idClient)
+  public function setclient($client)
   {
-    $this->idClient=$idClient;
+    $this->client=$client;
   }
   public function getState()
   {

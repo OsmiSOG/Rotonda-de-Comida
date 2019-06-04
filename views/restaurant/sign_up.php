@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Sign up</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../../views/css/style.css">
   </head>
   <body>
     <header>
@@ -15,36 +15,41 @@
       </nav>
     </header>
     <h1 id="title-body">Sign up</h1>
-    <form class="form" action="#" method="post">
+    <form class="form" action=<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?> method="post">
       <div class="input-form">
         <label for="">name restaurant</label>
-        <input type="text" name="name" value="">
+        <input type="text" name="name" value="" required>
       </div>
       <div class="input-form">
         <label for="">NIT</label>
-        <input type="number" name="NIT" value="">
+        <input type="number" name="NIT" value="" required>
       </div>
       <div class="input-form">
-        <p>Location</p>
-        <label for="">Country</label>
-        <select class="" name="">
-
+        <p>Localizacion</p>
+        <label for="">Pais</label>
+        <select class="" name="country">
+          <option disabled selected>Escoje tu pais</option>
+          <?php for ($i=0; $i <count($countries) ; $i++): ?>
+            <option value=<?php echo $countries[$i]['idPais']; ?>><?php echo $countries[$i]['pais']; ?></option>
+          <?php endfor; ?>
         </select>
-        <label for="">City</label>
-        <select class="" name="">
-
+        <label for="">Ciudad</label>
+        <select class="" name="city">
+          <?php if(empty($cities)): ?>
+            <option disabled selected>Escoje tu pais</option>
+          <?php endif; ?>
         </select>
-        <label for="">Direction</label>
-        <input type="text" name="" value="">
+        <label for="">Direccion</label>
+        <input type="text" name="nomenclature" value="">
       </div>
       <div class="input-form">
-        <label for="">specialty</label>
-        <select class="" name="">
+        <label for="">Especialidad</label>
+        <select class="" name="specialty">
 
         </select>
       </div>
       <div class="input-form">
-        <label for="">password</label>
+        <label for="">Password</label>
         <input type="password" name="" value="">
       </div>
       <div class="input-form">

@@ -3,17 +3,17 @@
   <head>
     <meta charset="utf-8">
     <title>Detail menu</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../../views/css/style.css">
   </head>
   <body>
     <header>
       <h1 id="title-header">Virtual roundabout</h1>
       <nav>
         <ul>
-          <li> </li>
-          <li> <a href="#">addDirection</a> </li>
-          <li> <a href="#">Shopping cart</a> </li>
-          <li> <a href="#">sign out</a> </li>
+          <li> <a href="add_direction.php">addDirection</a> </li>
+          <li> <a href="orders.php">orders</a> </li>
+          <li> <a href="shopping_cart.php">Shopping cart</a> </li>
+          <li> <a href="../close_session.php">sign out</a> </li>
         </ul>
       </nav>
     </header>

@@ -1,12 +1,17 @@
 
-@import url('https://fonts.googleapis.com/css?family=Carter+One');
-@import url('https://fonts.googleapis.com/css?family=Catamaran|Francois+One|Hind+Siliguri|Luckiest+Guy|Notable|Titan+One');
+/* @import url('https://fonts.googleapis.com/css?family=Carter+One');
+@import url('https://fonts.googleapis.com/css?family=Catamaran|Francois+One|Hind+Siliguri|Luckiest+Guy|Notable|Titan+One'); */
+@import url('https://fonts.googleapis.com/css?family=Ramabhadra&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Hammersmith+One|Montserrat&display=swap');
 
 body {
 
 
   text-align: center;
-  font-family: Montserrat,'Helvetica Neue',Arial,Helvetica,sans-serif;
+  /* font-family: Montserrat,'Helvetica Neue',Arial,Helvetica,sans-serif; */
+  font-family: montserrat, arial, sans-serif;
+       font-weight: 200;
   color: rgb(0, 0, 0);
   margin: 0;
   padding: 0;
@@ -25,14 +30,24 @@ header {
  color: white;
  float: left;
  padding: 15px 0 0 20px;
- font-family: 'Luckiest Guy', cursive;
+ /* font-family: 'Luckiest Guy', cursive;
  font-family: 'Titan One', cursive;
  font-family: 'Notable', sans-serif;
  font-family: 'Francois One', sans-serif;
  font-family: 'Hind Siliguri', sans-serif;
- font-family: 'Catamaran', sans-serif;
- text-align-last: center;
+ font-family: 'Catamaran', sans-serif; */
+/* font-family: 'Montserrat', sans-serif; */
+/* font-family: montserrat, arial, sans-serif;
+font-weight: 200; */
+font-family: 'Montserrat', sans-serif;
+font-family: 'Hammersmith One', sans-serif;
+
+
 font-weight: bold;
+ line-height:1.15;
+ -ms-text-size-adjust:100%;
+ -webkit-text-size-adjust:100%
+ text-align-last: center;
 }
 
 nav {
@@ -83,7 +98,8 @@ nav ul li a:hover{
   font-size: 1em;
 }
 #title-body{
-  font-family: 'Carter One', cursive;
+  font-family: montserrat, arial, sans-serif;
+  font-weight: bold;
   font-size: 3em;
   color: rgb(63, 40, 9);
   text-shadow: 3px 3px 3px rgb(124, 124, 61);
@@ -93,14 +109,16 @@ nav ul li a:hover{
 }
 
 .titulo-h1{
-  font-family: 'Carter One', cursive;
+  font-family: montserrat, arial, sans-serif;
+  font-weight: bold;
   font-size: 3em;
   color: rgb(63, 40, 9);
   text-shadow: 3px 3px 3px rgb(124, 124, 61);
 }
 
 .nuevo{
-  font-family: 'Carter One', cursive;
+  font-family: montserrat, arial, sans-serif;
+  font-weight: bold;
   font-size: 1.5em;
   color: rgb(63, 40, 9);
   text-shadow: 3px 3px 3px rgb(124, 124, 61);
@@ -118,12 +136,13 @@ nav ul li a:hover{
    text-shadow: 3px 3px 3px #4e1912;
    box-shadow: 3px 5px 7px #000000;
    border-radius: 8px;
-   font-family: 'Luckiest Guy', cursive;
+   /* font-family: 'Luckiest Guy', cursive;
    font-family: 'Titan One', cursive;
    font-family: 'Notable', sans-serif;
    font-family: 'Francois One', sans-serif;
    font-family: 'Hind Siliguri', sans-serif;
-   font-family: 'Catamaran', sans-serif;
+   font-family: 'Catamaran', sans-serif; */
+     font-family: montserrat, arial, sans-serif;
    text-align-last: center;
    font-weight: 700;
    text-align: start;
@@ -131,20 +150,20 @@ nav ul li a:hover{
    font-size: 14px;
    width:80px;
    height:34px;
-   -webkit-text-size-adjust: auto;   
+   -webkit-text-size-adjust: auto;
   }
- 
-  
 
-  
+
+
+
 .option-box{
   display: inline-block;
   margin: 10px;
   border: thick double rgb(85, 0, 0);
   border-radius: 10px;
   background-color: rgb(226, 226, 226);
-  height: 10em;
-  width: 10em;
+  height: 12em;
+  width: 12em;
 }
 
 .option-box h4{
@@ -164,7 +183,8 @@ nav ul li a:hover{
   background-color: #ef3040;
 }
 .titulos-res{
-  font-family: 'Carter One', cursive;
+  font-family: montserrat, arial, sans-serif;
+  font-weight: bold;
   font-size: 1em;
   color: rgb(63, 40, 9);
   text-shadow: 3px 3px 3px rgb(124, 124, 61);

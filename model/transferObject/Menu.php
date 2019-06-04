@@ -4,10 +4,10 @@
  */
 class Menu
 {
-  private $name;
   private $idMenu;
+  private $name;
   private $price;
-  private $idProducts;
+  private $Products;
 
   function __construct($name=null, $idMenu=null, $price=null, $idProducts=null)
   {
@@ -40,13 +40,13 @@ class Menu
   {
     $this->price=$price;
   }
-  public function getIdProducts()
+  public function getProducts()
   {
-    return $this->idProducts;
+    return $this->Products;
   }
-  public function setIdProducts($idProducts)
+  public function setIdProducts($Products)
   {
-    $this->idProducts=$idProducts;
+    $this->Products=$Products;
   }
 
 }

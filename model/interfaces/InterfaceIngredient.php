@@ -4,11 +4,12 @@
    */
   interface InterfaceIngredient
   {
-    public function selectIngredients();
-    public function selectIngredientsByMenu($idMenu);
-    public function selectIngredientsByProduct($idProduct);
-    public function selectIngredientsByRestaurant($idRestaurant);
-    public function insertIngredient($ingredient);
+    public function getIngredients();
+    public function getIngredientsByMenu($idMenu);
+    public function getIngredientsByProduct($idProduct);
+    public function insertIngredientToProduct($ingredient);
+    // public function getIngredient($ingredient);
+    // public function getIngredientsByRestaurant($idRestaurant);
   }
 
 ?>

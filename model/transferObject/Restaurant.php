@@ -6,15 +6,15 @@ class Restaurant
 {
   private $name;
   private $nit;
-  private $idDirection;
-  private $idSpecialty;
+  private $direction;
+  private $specialty;
 
-  function __construct($name=null, $nit=null, $idDirection=null, $idSpecialty=null)
+  function __construct($name=null, $nit=null, $direction=null, $specialty=null)
   {
     $this->name=$name;
     $this->nit=$nit;
-    $this->idDirection=$idDirection;
-    $this->idSpecialty=$idSpecialty;
+    $this->direction=$direction;
+    $this->specialty=$specialty;
 
   }
   public function getName()
@@ -33,21 +33,21 @@ class Restaurant
   {
     $this->nit=$nit;
   }
-  public function getIdDirection()
+  public function getdirection()
   {
-    return $this->idDirection;
+    return $this->direction;
   }
-  public function setIdDirection($idDirection)
+  public function setdirection($direction)
   {
-    $this->idDirection=$idDirection;
+    $this->direction=$direction;
   }
-  public function idSpecialty()
+  public function getSpecialty()
   {
     return $this->specialty;
   }
-  public function idSpecialty($idSpecialty)
+  public function setSpecialty($specialty)
   {
-    $this->idSpecialty=$idSpecialty;
+    $this->specialty=$specialty;
   }
 
 }

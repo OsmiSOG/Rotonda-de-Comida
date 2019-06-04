@@ -3,16 +3,17 @@
   <head>
     <meta charset="utf-8">
     <title>shopping cart</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../../views/css/style.css">
   </head>
   <body>
     <header>
       <h1 id="title-header">Roundabout restaurant</h1>
       <nav>
         <ul>
-          <li></li>
-          <li> <a href="#">add direction</a> </li>
-          <li> <a href="#">sign out</a> </li>
+          <li> <a href="restaurants.php">restaurants</a> </li>
+          <li> <a href="add_direction.php">add direction</a> </li>
+          <li> <a href="orders.php">orders</a> </li>
+          <li> <a href="close_session.php">sign out</a> </li>
         </ul>
       </nav>
     </header>
@@ -25,7 +26,7 @@
       </div>
 
       <div class="">
-        <form class="form" action="index.html" method="post">
+        <form class="form" action=<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?> method="post">
           <div class="input-form">
             <label for="">Total</label>
             <input type="number" name="" value="0.0">

@@ -6,11 +6,10 @@ session_start();
 include_once ''; // incluir dao
 
 if (isset($_SESSION['client'])) {
-  // code...$_SESSION['menus'] = new Menu <- Objeto seleccionando para agregar al carrito
+  // code...
 } else  {
   // code...
   header('location: ../index.php');
 }
-
-require_once '../../views/client/menus.php';
- ?>
+require_once '../../views/client/orders.php';
+?>

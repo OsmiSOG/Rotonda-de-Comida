@@ -3,21 +3,22 @@
   <head>
     <meta charset="utf-8">
     <title>Add direction</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../../views/css/style.css">
   </head>
   <body>
     <header>
       <h1 id="title-header">Virtual roundabout</h1>
       <nav>
         <ul>
-          <li></li>
-          <li> <a href="#">Shopping cart</a></li>
-          <li> <a href="#">sign out</a></li>
+          <li> <a href="restaurants.php">restaurants</a> </li>
+          <li> <a href="orders.php">orders</a> </li>
+          <li> <a href="shopping_cart.php">Shopping cart</a></li>
+          <li> <a href="../close_session.php">sign out</a></li>
         </ul>
       </nav>
     </header>
     <div class="input-form">
-      <form class="form" action="index.html" method="post">
+      <form class="form" action=<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?> method="post">
         <label class="escoger "for="">country</label>
         <select class="" name="">
 

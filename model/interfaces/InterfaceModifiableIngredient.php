@@ -4,10 +4,10 @@
    */
   interface InterfaceModifiableIngredient
   {
-    public function insertModifiableIngredient($modifiableIngredient);
-    public function selectModifiableIngredienteByMenu($idMenu);
-    public function selectModifiableIngredienteByProduct($idProduct);
-    public function selectModifiableIngredienteByIngredient($modifiableIngredient);
+    public function insertModifiableIngredientToMenu($modifiableIngredient);
+    public function getModifiableIngredientByMenu($idMenu);
+    public function getModifiableIngredientByProduct($idProduct);
+    public function getModifiableIngredientByIngredient($modifiableIngredient);
 
   }
 
