@@ -14,7 +14,7 @@ class Ingredient
 
   function __construct($idIngredient=null, $name=null, $quantity=null, $modifiable=null)
   {
-    $this->name=$name
+    $this->name=$name;
     $this->idIngredient=$idIngredient;
     $this->quantity=$quantity;
     $this->modifiable=$modifiable;
@@ -26,7 +26,7 @@ class Ingredient
   }
   public function setName($name)
   {
-    $this->name=$name
+    $this->name=$name;
   }
   public function getIdIngredient()
   {
